@@ -28,6 +28,16 @@
         urbanfinch.run();
       
       });
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-9687987-13']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
     %title URBAN FINCH
   %body
     %header
@@ -83,16 +93,17 @@
             - (0...3).each do |i|
               .row
                 - (0...3).each do |j|
-                  - unless @clients[i + j].nil?
+                  - unless @clients[i + j].nil? || @clients[i + j].image.nil?
                     %a{:href => "#{@clients[i * j].url}", :title => "#{@clients[i * j].name} - #{@clients[i * j].url}"}
-                      / %img{:src => "data:#{@clients[i * j].image.type};base64,#{Base64.encode64(@clients[i * j].image.read)}", :alt => 'logo'}
+                      %img{:src => "data:#{@clients[i * j].image.image.type};base64,#{Base64.encode64(@clients[i * j].image.image.read)}", :alt => 'logo'}
           %div{:id => 'the_people', :class => 'segment'}
             .slider
               .slider_container
                 - @people.each do |person|
                   .slide
                     .image
-                      / %img{:src => "data:#{person.image.type};base64,#{Base64.encode64(person.image.read)}", :alt => 'person'}
+                      - unless person.image.nil?
+                        %img{:src => "data:#{person.image.type};base64,#{Base64.encode64(person.image.read)}", :alt => 'person'}
                     .tag
                       %p
                         = person.name
@@ -127,7 +138,8 @@
                   - work.jobs.each do |job|
                     .slide
                       .image
-                        / %img{:src => "data:#{job.image.type};base64,#{Base64.encode64(job.image.read)}", :alt => 'job'}
+                        - unless job.image.nil?
+                          %img{:src => "data:#{job.image.type};base64,#{Base64.encode64(job.image.read)}", :alt => 'job'}
                       .tag
                         %p
                           = job.name

@@ -31,12 +31,13 @@ class Admin < Padrino::Application
   end
 
   access_control.roles_for :admin do |role|
+    role.project_module :clients, "/clients"
     role.project_module :people, "/people"
-    role.project_module :jobs, "/jobs"
-    role.project_module :works, "/works"
     role.project_module :indoors, "/indoors"
     role.project_module :services, "/services"
-    role.project_module :clients, "/clients"
+    role.project_module :works, "/works"
+    role.project_module :jobs, "/jobs"
+    role.project_module :images, "/images"
     role.project_module :accounts, "/accounts"
   end
 end

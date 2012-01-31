@@ -10,26 +10,16 @@
     .inner
       %table.table
         %tr
-          %th.first=mat(:person, :image_id)
+          %th.first=mat(:person, :id)
           %th=mat(:person, :name)
-          %th=mat(:person, :image_type)
-          %th=mat(:person, :created_at)
-          %th=mat(:person, :updated_at)
-          %th=mat(:person, :image_name)
-          %th=mat(:person, :image_size)
           %th=mat(:person, :bio)
           %th=mat(:person, :email)
           %th.last="&nbsp;"
         -@people.each do |person|
           %tr
-            %td.first=person.image_id
+            %td.first=person.id
             %td=person.name
-            %td=person.image_type
-            %td=person.created_at
-            %td=person.updated_at
-            %td=person.image_name
-            %td=person.image_size
-            %td=person.bio
+            %td=truncate(person.bio, :length => 25)
             %td=person.email
             %td.last
               =button_to pat(:edit), url(:people, :edit, :id => person.id), :method => :get, :class => :button_to

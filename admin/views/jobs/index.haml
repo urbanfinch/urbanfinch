@@ -10,26 +10,16 @@
     .inner
       %table.table
         %tr
-          %th.first=mat(:job, :image_id)
+          %th.first=mat(:job, :id)
           %th=mat(:job, :name)
-          %th=mat(:job, :image_type)
-          %th=mat(:job, :created_at)
-          %th=mat(:job, :updated_at)
           %th=mat(:job, :url)
-          %th=mat(:job, :image_name)
-          %th=mat(:job, :image_size)
           %th=mat(:job, :work_id)
           %th.last="&nbsp;"
         -@jobs.each do |job|
           %tr
-            %td.first=job.image_id
-            %td=job.name
-            %td=job.image_type
-            %td=job.created_at
-            %td=job.updated_at
+            %td.first=job.name
+            %td=job.id
             %td=job.url
-            %td=job.image_name
-            %td=job.image_size
             %td=job.work_id
             %td.last
               =button_to pat(:edit), url(:jobs, :edit, :id => job.id), :method => :get, :class => :button_to

@@ -1,37 +1,13 @@
 .group
-  =f.label :image_id
-  =f.error_message_on :image_id
-  =f.text_field :image_id, :class => :text_field
-  %span.description Ex: a simple text
-
-.group
   =f.label :name
   =f.error_message_on :name
   =f.text_field :name, :class => :text_field
   %span.description Ex: a simple text
 
 .group
-  =f.label :image_type
-  =f.error_message_on :image_type
-  =f.text_field :image_type, :class => :text_field
-  %span.description Ex: a simple text
-
-.group
-  =f.label :image_name
-  =f.error_message_on :image_name
-  =f.text_field :image_name, :class => :text_field
-  %span.description Ex: a simple text
-
-.group
-  =f.label :image_size
-  =f.error_message_on :image_size
-  =f.text_field :image_size, :class => :text_field
-  %span.description Ex: a simple text
-
-.group
   =f.label :bio
   =f.error_message_on :bio
-  =f.text_field :bio, :class => :text_field
+  =f.text_area :bio, :class => :text_area, :rows => 10
   %span.description Ex: a simple text
 
 .group

@@ -1,0 +1,27 @@
+.group
+  =f.label :image
+  =f.error_message_on :image
+  =f.file_field :image, :accept => 'image/png'
+  
+.group
+  =f.label :person_id
+  =f.error_message_on :person_id
+  =f.text_field :person_id, :class => :text_field
+  %span.description Ex: The person ID this image belongs to
+
+.group
+  =f.label :client_id
+  =f.error_message_on :client_id
+  =f.text_field :client_id, :class => :text_field
+  %span.description Ex: The client ID this image belongs to
+
+.group
+  =f.label :job_id
+  =f.error_message_on :job_id
+  =f.text_field :job_id, :class => :text_field
+  %span.description Ex: The job ID this image belongs to
+
+
+.group.navform.wat-cf
+  =f.submit pat(:save), :class => :button
+  =f.submit pat(:cancel), :onclick => "window.location='#{url(:images, :index)}';return false", :class => :button
