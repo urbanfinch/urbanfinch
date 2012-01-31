@@ -85,14 +85,14 @@
                 - (0...3).each do |j|
                   - unless @clients[i + j].nil?
                     %a{:href => "#{@clients[i * j].url}", :title => "#{@clients[i * j].name} - #{@clients[i * j].url}"}
-                      %img{:src => "data:#{@clients[i * j].image.type};base64,#{Base64.encode64(@clients[i * j].image.read)}", :alt => 'logo'}
+                      / %img{:src => "data:#{@clients[i * j].image.type};base64,#{Base64.encode64(@clients[i * j].image.read)}", :alt => 'logo'}
           %div{:id => 'the_people', :class => 'segment'}
             .slider
               .slider_container
                 - @people.each do |person|
                   .slide
                     .image
-                      %img{:src => "data:#{person.image.type};base64,#{Base64.encode64(person.image.read)}", :alt => 'person'}
+                      / %img{:src => "data:#{person.image.type};base64,#{Base64.encode64(person.image.read)}", :alt => 'person'}
                     .tag
                       %p
                         = person.name
@@ -127,7 +127,7 @@
                   - work.jobs.each do |job|
                     .slide
                       .image
-                        %img{:src => "data:#{job.image.type};base64,#{Base64.encode64(job.image.read)}", :alt => 'job'}
+                        / %img{:src => "data:#{job.image.type};base64,#{Base64.encode64(job.image.read)}", :alt => 'job'}
                       .tag
                         %p
                           = job.name
