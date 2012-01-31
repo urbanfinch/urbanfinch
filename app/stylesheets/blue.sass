@@ -1,0 +1,113 @@
+@import "shared"
+
+/* Colors */
+
+$blue: #637C86
+
+html
+  @include background-size(cover)
+  
+body
+  background: url('/images/blue/watermark.png') no-repeat center center fixed
+  
+  a
+    +link-colors($white)
+  
+header
+  div.container
+
+    nav#main
+      background-image: url('/images/blue/nav.png')
+      
+      a
+        span.finch_left
+          background-image: url('/images/blue/finch_left.png')
+          opacity: 0.8
+          
+        span.finch_right
+          background-image: url('/images/blue/finch_right.png')
+          opacity: 0.8
+          
+    div#logo
+      background-image: url('/images/blue/logo_small.png')
+      opacity: 0.8
+      
+section
+  color: $white
+  
+  div.container
+    background: $blue
+    // IE 7 must have background not background-color!
+    background: rgba(99,124,134,0.5)
+    
+    div.inner_header
+      nav
+        a.small
+          background-image: url('/images/blue/button_small.png')
+          
+        a.large
+          background-image: url('/images/blue/button_large.png')
+          
+    div.inner_body
+      background: $blue
+      // IE 7 must have background not background-color!
+      background: rgba(99,124,134,0.8)
+      
+      div.segment
+        div.slider
+          background: $blue
+          // IE 7 must have background not background-color!
+          background: rgba(99,124,134,0.9)
+          
+          div.slide
+            div.tag
+              p
+                background: $blue
+                // IE 7 must have background not background-color!
+                background: rgba(99,124,134,0.8)
+                  
+        a.previous
+          background-image: url('/images/blue/previous.png')
+
+        a.next
+          background-image: url('/images/blue/next.png')
+      
+section#the_contacts
+  div.container
+    div.inner_body
+      div.left
+        nav
+          a#facebook
+            background-image: url('/images/blue/facebook.png')
+            
+          a#twitter
+            background-image: url('/images/blue/twitter.png')
+              
+          a#linkedin
+            background-image: url('/images/blue/linkedin.png')
+            
+      div.right
+        form
+          input,
+          textarea
+            background-color: $white
+            outline-color: $white
+            color: $black
+            
+          input::-webkit-input-placeholder,
+          textarea::-webkit-input-placeholder
+            color: $blue
+            
+          input[type=submit]
+            outline: none
+            background-image: url('/images/blue/button_small.png')
+            color: $white
+            
+          p.loading
+            background-image: url('/images/blue/loader.gif')
+    
+footer
+
+  div#skyline
+    background-image: url('/images/blue/skyline.png')
+    opacity: 0.8

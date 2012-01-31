@@ -1,0 +1,1 @@
+html,body{min-height:100%;height:100%}body.no_background{background:none}header div.container nav#main{display:none}header div.container div#logo{display:none}section{position:absolute;bottom:0px;z-index:1}section div.container div.inner_body div.segment{margin-bottom:0px}footer div#skyline{position:absolute;display:none;top:100%;margin-top:-300px;z-index:0}

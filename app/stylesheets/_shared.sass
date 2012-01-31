@@ -1,0 +1,417 @@
+@import "compass"
+@import "compass/reset"
+
+@include font-face("Bebas", font-files("/fonts/bebas.woff", woff, "bebas.otf", opentype), "bebas.eot")
+
+/* Colors */
+$black: #2F2F2F
+$orange: #F89200
+$blue: #637C86
+$white: #FFFFFF
+
+/* Tags */
+html
+  font-family: Arial, sans-serif
+  font-size: 16px
+  background-color: $white
+  color: $black
+  
+  a
+    outline: none
+  
+header
+  height: 110px
+  margin-bottom: 40px
+  width: 100%
+  min-width: 1040px
+  padding: 40px 0px
+  
+  div.container
+    nav#themes
+      display: none
+      position: absolute
+      width: 72px
+      height: 16px
+      top: 190px
+      padding: 4px
+      margin-left: 80px
+            
+      a
+        display: block
+        float: left
+        width: 16px
+        height: 16px
+        margin: 0px 4px
+        text-indent: -9999px
+
+      a#blue
+        background-image: url('/images/blue.png')
+      
+      a#orange
+        background-image: url('/images/orange.png')
+      
+      a#hybrid
+        background-image: url('/images/hybrid.png')
+              
+    nav#main
+      position: absolute
+      width: 170px
+      height: 150px
+      margin-left: 40px
+      background-repeat: no-repeat
+
+      a
+        display: block
+        width: 170px
+        height: 30px
+        text-indent: -9999px
+        
+        span
+          position: absolute
+          display: none
+          width: 24px
+          height: 24px
+          
+        span.the_finch
+          top: -19px
+          left: -6px
+          
+        span.the_services
+          top: 9px
+          left: 149px
+          
+        span.the_work
+          top: 35px
+          left: 2px
+          
+        span.the_indoor
+          top: 60px
+          left: 147px
+          
+        span.the_contacts
+          top: 93px
+          left: -5px
+          
+      a:hover,
+      a:active,
+      a.active
+        span
+          display: block
+      
+    div#logo
+      float: right
+      width: 250px
+      height: 157px
+      margin-right: 40px
+      
+      a
+        display: block
+        cursor: pointer
+        width: 250px
+        height: 157px
+        
+    div#animation
+      position: absolute
+      display: none
+      width: 500px
+      height: 315px
+      left: 50%
+      top: 50%
+      margin-left: -250px
+      margin-top: -158px
+
+      img
+        width: 100%
+        height: 100%
+        opacity: 0.8
+    
+section
+  width: 100%
+  min-width: 1040px
+  margin-bottom: 20px
+  color: $white
+  
+  div.container
+    margin: 0px 40px
+    padding: 20px
+    
+    div.inner_header
+      height: 24px
+      margin-bottom: 20px
+      
+      h1
+        float: left
+        font-family: Bebas
+        font-size: 24px
+    
+      nav
+        float: right
+        height: 24px
+      
+        a
+          display: block
+          float: left
+          height: 24px
+          line-height: 24px
+          margin-left: 10px
+          font-family: Bebas
+          font-size: 14px
+          text-decoration: none
+          text-align: center
+          
+        a.small
+          width: 90px
+          
+        a.large
+          width: 110px
+          
+    div.inner_body
+      min-height: 274px
+      padding: 10px
+      
+      div.segment
+        margin-bottom: 10px
+        
+        div.slider
+          position: relative
+          width: 100%
+          height: 274px
+          overflow: hidden
+          
+          div.slider_container
+            height: 274px
+            position: absolute
+            
+            div.slide
+              float: left
+              width: 490px
+              height: 276px
+              margin-right: 10px
+            
+              div.image
+                position: absolute
+                width: 490px
+                height: 276px
+              
+                img
+                  display: block
+                  width: inherit
+                  height: inherit
+                
+              div.tag
+                position: absolute
+                height: 52px
+                width: 490px
+                margin-top: 204px
+              
+                p
+                  float: right
+                  height: 44px
+                  padding: 8px
+                  font-size: 14px
+                  margin-bottom: 8px
+                  line-height: 18px
+                  text-align: right
+              
+                  a
+                    display: block
+          
+        a.slider_control
+          position: relative
+          display: block
+          width: 74px
+          height: 74px
+          text-indent: -9999px
+          margin-top: -173px
+          
+        a.previous
+          float: left
+          margin-left: -36px
+          
+        a.next
+          float: right
+          margin-right: -36px
+            
+      div.segment:last-child
+        margin-bottom: 0px
+      
+      div.left
+        float: left
+        height: 274px
+        
+      div.right
+        float: right
+        height: 274px
+        
+      p
+        font-size: 16px
+        margin-bottom: 16px
+        line-height: 22px
+      
+section#the_finch
+  div.container
+    div.inner_body
+      div#the_focus
+        div.left
+          float: left
+          max-width: 675px
+        
+          h2
+            font-family: Bebas
+            font-size: 32px
+            margin-bottom: 16px
+        
+          p
+            span.highlight
+              font-family: Bebas
+            
+        div.right
+          float: right
+          width: 200px
+          height: 276px
+          background-color: gray
+          
+      div#the_clients
+        div.row
+          width: 900px
+          height: 82px
+          margin: 0px auto
+          
+          a
+            float: left
+            display: block
+            width: 290px
+            height: 82px
+            
+            img
+              max-width: 290px
+              max-height: 82px
+            
+            img:first-child
+              margin-right: 15px
+            
+            img:last-child
+              margin-left: 15px
+            
+        div.row:first-child
+          margin-bottom: 14px
+          
+        div.row:last-child
+          margin-top: 14px
+          
+      div#the_people
+        div.slider_container
+          div.slide
+            width: 900px
+            
+            div.bio
+              position: relative
+              width: 390px
+              left: 490px
+              height: 256px
+              padding: 10px
+              background-color: $black
+            
+              h3
+                font-family: Bebas
+                font-size: 18px
+                margin-bottom: 10px
+            
+section#the_contacts
+  div.container
+    div.inner_body
+      
+      h2
+        font-family: Bebas
+        font-size: 20px
+        margin-bottom: 10px
+        
+      div.left
+        
+        h2.check_us_out
+          margin-top: 34px
+            
+        p
+          margin-bottom: 10px
+          
+          a
+            font-weight: bold
+            
+        address
+          font-size: 16px
+          margin-bottom: 10px
+          line-height: 22px
+          
+          span.bold
+            font-weight: bold
+        
+        nav
+          height: 48px
+          
+          a
+            display: block
+            float: left
+            width: 48px
+            height: 48px
+            margin-right: 10px
+            text-indent: -9999px
+          
+      div.right
+        width: 600px
+        
+        form
+          p
+            margin-bottom: 10px
+            
+          input,
+          textarea
+            border: none
+            height: 26px
+            width: 590px
+            padding: 5px
+            font-size: 16px
+            
+          textarea
+            height: 102px
+            resize: none
+          
+          input[type=submit]
+            float: right
+            border: none
+            width: 90px
+            height: 24px
+            padding: 0px
+            font-family: Bebas
+            font-size: 14px
+            background-color: transparent
+            cursor: pointer
+            
+          input.error,
+          textarea.error
+            background-color: $black
+            color: $white
+            
+          p.message
+            display: none
+            float: left
+            width: 500px
+            height: 24px
+            line-height: 24px
+            font-weight: bold
+          
+          p.loading
+            display: none
+            float: left
+            width: 500px
+            height: 24px
+            background-repeat: no-repeat
+            background-position: center
+
+footer
+  min-width: 1040px
+  
+  div#skyline
+    width: 100%
+    height: 300px
+    background-position: 300px 0px
+    background-repeat: repeat-x

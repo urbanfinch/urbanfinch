@@ -1,0 +1,8 @@
+--- 
+:stylesheet: compass
+:test: none
+:orm: mongomapper
+:admin_renderer: haml
+:script: jquery
+:mock: none
+:renderer: haml

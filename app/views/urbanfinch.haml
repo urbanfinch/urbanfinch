@@ -1,0 +1,184 @@
+!!! 5
+%html{:lang => 'en'}
+  %head
+    %meta{:charset => 'utf-8'}
+    %meta{:name => 'description', :content => 'URBAN FINCH'}
+    %link{:rel => 'icon', :type => 'image/png', :href => '/images/favicon.png'}
+    %link{:rel => 'shortcut icon', :type => 'image/png', :href => '/images/favicon.png'}
+    <!--[if ! lte IE 6]><!-->
+    %link{:id => 'theme', :rel => 'stylesheet', :href => '/stylesheets/hybrid.css', :title => 'URBAN FINCH', :media => 'screen, projection', :type => 'text/css'}
+    <!--<![endif]-->
+    /[if lte IE 6]
+      %link{:rel=>'stylesheet', :href=>'http://universal-ie6-css.googlecode.com/files/ie6.1.1.css', :title => 'URBAN FINCH', :media => 'screen, projection', :type => 'text/css'}
+    /[if lt IE 9]
+      %script{:type => 'text/javascript', :src => 'http://html5shiv.googlecode.com/svn/trunk/html5.js'}
+    <!--[if ! lte IE 7]><!-->
+    %script{:type => 'text/javascript', :src => '/javascripts/jquery.min.js'}
+    %script{:type => 'text/javascript', :src => '/javascripts/jquery.cookie.min.js'}
+    %script{:type => 'text/javascript', :src => '/javascripts/jquery.slider.min.js'}
+    %script{:type => 'text/javascript', :src => '/javascripts/jquery.validate.min.js'}
+    %script{:type => 'text/javascript', :src => '/javascripts/modernizr.js'}
+    %script{:type => 'text/javascript', :src => '/javascripts/urbanfinch.js'}
+    <!--<![endif]-->
+    :javascript
+    
+      /* Initiate the application javascript and run */
+      $(document).ready(function(){
+      
+        urbanfinch.run();
+      
+      });
+    %title URBAN FINCH
+  %body
+    %header
+      .container
+        %nav{:id => 'main'}
+          %a{:class => 'the_finch', :href => '#the_finch', :title => 'THE FINCH'}
+            THE FINCH
+            %span{:class => 'the_finch finch_right'}
+          %a{:class => 'the_services', :href => '#the_services', :title => 'THE SERVICES'}
+            THE SERVICES
+            %span{:class => 'the_services finch_left'}
+          %a{:class => 'the_work', :href => '#the_work', :title => 'THE WORK'}
+            THE WORK
+            %span{:class => 'the_work finch_right'}
+          %a{:class => 'the_indoor', :href => '#the_indoor', :title => 'THE INDOOR'}
+            THE INDOOR
+            %span{:class => 'the_indoor finch_left'}
+          %a{:class => 'the_contacts', :href => '#the_contacts', :title => 'THE CONTACTS'}
+            THE CONTACTS
+            %span{:class => 'the_contacts finch_right'}
+        %nav{:id => 'themes'}
+          %a{:id => 'blue', :href => '/stylesheets/blue.css', :title => 'BLUE'} BLUE
+          %a{:id => 'orange', :href => '/stylesheets/orange.css', :title => 'ORANGE'} ORANGE
+          %a{:id => 'hybrid', :href => '/stylesheets/hybrid.css', :title => 'HYBRID'} HYBRID
+        %div{:id => 'logo'}
+          %a{:href => '/', :title => 'URBAN FINCH'}
+        %div{:id => 'animation'}
+          %img{:src => '/', :alt => 'logo'}
+    %section{:id => 'the_finch'}
+      .container
+        .inner_header
+          %h1 THE FINCH
+          %nav{:class => 'segment'}
+            %a{:class => 'the_focus small', :href => '#the_focus', :title => 'THE FOCUS'} THE FOCUS
+            %a{:class => 'the_clients small', :href => '#the_clients', :title => 'THE CLIENTS'} THE CLIENTS
+            %a{:class => 'the_people small', :href => '#the_people', :title => 'THE PEOPLE'} THE PEOPLE
+        .inner_body
+          %div{:id => 'the_focus', :class => 'segment'}
+            .left
+              %h2 OUR FOCUS IS LOCAL.
+              %p
+                I guess you could say we have Nebraska Pride. We want to see our local communities thrive and local businesses succeed. 
+                We strive to help the Nebraska business achieve its goals by uncovering insights, developing strategies, 
+                and implementing marketing plans that can close the gap between your brand and audience.
+              %h2 WE DON'T DESCRIMINATE.
+              %p
+                Every brand, no matter the size, deserves a partnership with quality communication 
+                strategists. Whether a large company looking to increase market share, a small non-profit 
+                trying to spread a message, or a dreamer with an idea. 
+                %span{:class => 'highlight'} WE CAN AND WANT TO HELP.
+            .right
+          %div{:id => 'the_clients', :class => 'segment'}
+            - (0...3).each do |i|
+              .row
+                - (0...3).each do |j|
+                  - unless @clients[i + j].nil?
+                    %a{:href => "#{@clients[i * j].url}", :title => "#{@clients[i * j].name} - #{@clients[i * j].url}"}
+                      %img{:src => "data:#{@clients[i * j].image.type};base64,#{Base64.encode64(@clients[i * j].image.read)}", :alt => 'logo'}
+          %div{:id => 'the_people', :class => 'segment'}
+            .slider
+              .slider_container
+                - @people.each do |person|
+                  .slide
+                    .image
+                      %img{:src => "data:#{person.image.type};base64,#{Base64.encode64(person.image.read)}", :alt => 'person'}
+                    .tag
+                      %p
+                        = person.name
+                        %a{:href => "#{person.email}", :title => "Send mail to #{person.name}…"}= person.email
+                    .bio
+                      %h3= person.name
+                      %p= person.bio
+            %a{:class => 'slider_control previous', :href => '#previous', :title => 'Previous'} Previous
+            %a{:class => 'slider_control next', :href => '#next', :title => 'Next'} Next
+    %section{:id => 'the_services'}
+      .container
+        .inner_header
+          %h1 THE SERVICES
+          %nav{:class => 'segment'}
+            - @services.each do |service|
+              %a{:class => "services_#{service.name.downcase} large", :href => "#services_#{service.name.downcase}", :title => "#{service.name.upcase}"}= service.name.upcase
+        .inner_body
+          - @services.each do |service|
+            %div{:id => "services_#{service.name.downcase}", :class => 'segment'}= service.description
+    %section{:id => 'the_work'}
+      .container
+        .inner_header
+          %h1 THE WORK
+          %nav{:class => 'segment'}
+            - @works.each do |work|
+              %a{:class => "work_#{work.name.downcase} large", :href => "#work_#{work.name.downcase}", :title => "#{work.name.upcase}"}= work.name.upcase
+        .inner_body
+          - @works.each do |work|
+            %div{:id => "work_#{work.name.downcase}", :class => 'segment'}
+              .slider
+                .slider_container
+                  - work.jobs.each do |job|
+                    .slide
+                      .image
+                        %img{:src => "data:#{job.image.type};base64,#{Base64.encode64(job.image.read)}", :alt => 'job'}
+                      .tag
+                        %p
+                          = job.name
+                          %a{:href => "#{job.url}", :title => "#{job.name}"}= job.url
+              %a{:class => 'slider_control previous', :href => '#previous', :title => 'Previous'} Previous
+              %a{:class => 'slider_control next', :href => '#next', :title => 'Next'} Next
+    %section{:id => 'the_indoor'}
+      .container
+        .inner_header
+          %h1 THE INDOOR
+          %nav{:class => 'segment'}
+            - @indoors.each do |indoor|
+              %a{:class => "indoors_#{indoor.name.downcase} large", :href => "#indoors_#{indoor.name.downcase}", :title => "#{indoor.name.upcase}"}= indoor.name.upcase
+        .inner_body
+          - @indoors.each do |indoor|
+            %div{:id => "indoors_#{indoor.name.downcase}", :class => 'segment'}= indoor.description
+    %section{:id => 'the_contacts'}
+      .container
+        .inner_header
+          %h1 THE CONTACTS
+          %nav
+        .inner_body
+          .left
+            %h2 HIRE THE FINCH
+            %address
+              %span{:class => 'bold'} Urban Finch
+              %br
+              5555 Example Ave.
+              %br
+              Omaha NE, 68686
+            %p
+              %a{:href => 'tel:1-402-444-5555', :title => 'Call us!'} 1-402-444-5555
+            %p
+              %a{:href => 'mailto:thefinch@urbanfinch.com', :title => 'Send us mail!'} thefinch@urbanfinch.com
+            %h2{:class => 'check_us_out'} CHECK US OUT ON…
+            %nav
+              %a{:id => 'facebook', :href => '#facebook', :title => 'Facebook'} Facebook
+              %a{:id => 'twitter', :href => '#twitter', :title => 'Twitter'} Twitter
+              %a{:id => 'linkedin', :href => '#linkedin', :title => 'LinkedIn'} LinkedIn
+          .right
+            %h2 GET IN TOUCH WITH THE FINCH
+            %form{:id => 'contact', :action => '/contact', :method => 'POST'}
+              %p
+                %input{:id => 'name', :name => 'name', :type => 'text', :placeholder => 'Name'}
+              %p
+                %input{:id => 'email', :name => 'email', :type => 'email', :placeholder => 'E-Mail'}
+              %p
+                %textarea{:id => 'message', :cols => 1, :rows => 1, :name => 'message', :placeholder => 'Message…'}
+              %p{:class => 'message'}
+              %p{:class => 'loading'}
+              %p
+                %input{:id => 'send', :name => 'send', :value => 'SEND', :type => 'submit'}
+    %footer
+      %div{:id => 'skyline'}

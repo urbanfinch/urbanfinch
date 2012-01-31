@@ -1,0 +1,41 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active=link_to pat(:list), url(:people, :index)
+      %li=link_to pat(:new), url(:people, :new)
+  .content
+    %h2.title
+      =pat(:all)
+      =mt(:people)
+    .inner
+      %table.table
+        %tr
+          %th.first=mat(:person, :image_id)
+          %th=mat(:person, :name)
+          %th=mat(:person, :image_type)
+          %th=mat(:person, :created_at)
+          %th=mat(:person, :updated_at)
+          %th=mat(:person, :image_name)
+          %th=mat(:person, :image_size)
+          %th=mat(:person, :bio)
+          %th=mat(:person, :email)
+          %th.last="&nbsp;"
+        -@people.each do |person|
+          %tr
+            %td.first=person.image_id
+            %td=person.name
+            %td=person.image_type
+            %td=person.created_at
+            %td=person.updated_at
+            %td=person.image_name
+            %td=person.image_size
+            %td=person.bio
+            %td=person.email
+            %td.last
+              =button_to pat(:edit), url(:people, :edit, :id => person.id), :method => :get, :class => :button_to
+              ="|"
+              =button_to pat(:delete), url(:people, :destroy, :id => person.id), :method => :delete, :class => :button_to, :onsubmit => "return confirm('#{pat(:confirm)}')"
+      .actions-bar.wat-cf
+        .actions="&nbsp;"
+
+-content_for :sidebar, partial("base/sidebar")
