@@ -3,11 +3,11 @@ require 'net/smtp'
 Urbanfinch.controllers :index do
   
   get :index, :map => '/' do
-    @clients = [] #Client.all.sort_by{ rand }.take(9)
-    @people = [] #Person.all
-    @services = [] #Service.all
-    @indoors = [] #Indoor.all
-    @works = [] #Work.all
+    @clients = Client.all.sort_by{ rand }.take(9)
+    @people = Person.all
+    @services = Service.all
+    @indoors = Indoor.all
+    @works = Work.all
     
     render :urbanfinch
   end
