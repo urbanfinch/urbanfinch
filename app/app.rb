@@ -49,7 +49,7 @@ class Urbanfinch < Padrino::Application
   #
   
   configure do
-    set :haml,  { :format => :html5, :encoding => 'utf-8' }
+    set :haml,  { :format => :html5 }
   end
 
   ##
