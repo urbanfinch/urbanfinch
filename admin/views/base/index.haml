@@ -2,6 +2,35 @@
   .content
     %h2.title Dashboard
     .inner
-      %p.first
-
+      %h3 Clients
+      %p{:class => 'hightlight'} A client item
+      %p Use the clients menu to manage items for the client tag cloud.
+      %h3 People
+      %p{:class => 'hightlight'} An UF worker
+      %p Use the people menu to manage UF workers.
+      %h3 Indoors
+      %p{:class => 'hightlight'} An indoor page
+      %p Use the indoors menu to manage pages on the indoor section with description (body).
+      %h3 Services
+      %p{:class => 'hightlight'} A service page
+      %p Use the services menu to manage pages on the service section with description (body).
+      %h3 Works
+      %p{:class => 'hightlight'} A work page
+      %p Use the works menu to manage pages on the work section.
+      %h3 Jobs
+      %p{:class => 'hightlight'} A job slide
+      %p Use the jobs menu to manage slides belonging to a work section.
+      %p 
+        To attach a job to a work page copy the work ID and paste it into the work box
+        on the job form.
+      %h3 Images
+      %p{:class => 'hightlight'} An image
+      %p Use the images menu to manage images belonging to a job, person, or client.
+      %p 
+        In order to attach an image to a job, person, or client you will need to copy the job, person
+        or client ID you want the image attached to and paste it into the image form!
+      %h3 Accounts
+      %p{:class => 'hightlight'} An account
+      %p Use the accounts menu to manage accounts for logging into this administration panel.
+      
 -content_for :sidebar, partial("base/sidebar")

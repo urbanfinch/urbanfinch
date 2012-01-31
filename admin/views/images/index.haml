@@ -26,9 +26,9 @@
                 %img{:src => "data:#{image.image.type};base64,#{Base64.encode64(image.image.read)}", :alt => 'image', :style => 'max-width: 100px'}
             %td=image.image_type
             %td=image.image_size
-            %td=image.person_id
-            %td=image.client_id
-            %td=image.job_id
+            %td=truncate(image.person_id.to_s, :length => 8)
+            %td=truncate(image.client_id.to_s, :length => 8)
+            %td=truncate(image.job_id.to_s, :length => 8)
             %td.last
               =button_to pat(:edit), url(:images, :edit, :id => image.id), :method => :get, :class => :button_to
               ="|"
