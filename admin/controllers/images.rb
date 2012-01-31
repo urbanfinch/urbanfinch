@@ -11,23 +11,22 @@ Admin.controllers :images do
   end
 
   post :create do
-    unless params[:image]
+    unless params[:image][:image].nil?
       @image = Image.new
       @image.image = params[:image][:image][:tempfile]
       @image.person_id = params[:image]['person_id']
       @image.client_id = params[:image]['client_id']
       @image.job_id = params[:image]['job_id']
-    
+        
       if @image.save
         flash[:notice] = 'Image was successfully created.'
         redirect url(:images, :edit, :id => @image.id)
       else
         render 'images/new'
       end
-      
     else
       flash[:notice] = 'Image could not be created.'
-      render 'images/new'
+      redirect url(:images, :new, :id => @image.id)
     end
   end
 
