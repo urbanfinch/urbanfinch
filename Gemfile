@@ -12,7 +12,6 @@ gem 'sinatra-flash', :require => 'sinatra/flash'
 gem 'bcrypt-ruby', :require => "bcrypt"
 gem 'compass'
 gem 'haml'
-gem 'SystemTimer', :require => "system_timer"
 gem 'mongo_mapper'
 gem 'bson_ext', :require => "mongo"
 gem 'joint'
