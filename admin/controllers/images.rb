@@ -13,7 +13,6 @@ Admin.controllers :images do
   post :create do
     unless params[:image][:image].nil?
       @image = Image.new
-      puts params[:image][:image][:tempfile]
       @image.image = params[:image][:image][:tempfile]
       @image.person_id = params[:image]['person_id']
       @image.client_id = params[:image]['client_id']
@@ -38,7 +37,14 @@ Admin.controllers :images do
 
   put :update, :with => :id do
     @image = Image.find(params[:id])
-    if @image.update_attributes(params[:image])
+    unless params[:image][:image][:tempfile].nil?
+      @image.image = params[:image][:image][:tempfile]
+    end
+    @image.person_id = params[:image]['person_id']
+    @image.client_id = params[:image]['client_id']
+    @image.job_id = params[:image]['job_id']
+    
+    if @image.save
       flash[:notice] = 'Image was successfully updated.'
       redirect url(:images, :edit, :id => @image.id)
     else
