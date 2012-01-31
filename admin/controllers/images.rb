@@ -37,7 +37,7 @@ Admin.controllers :images do
 
   put :update, :with => :id do
     @image = Image.find(params[:id])
-    unless params[:image][:image][:tempfile].nil?
+    unless params[:image][:image].nil?
       @image.image = params[:image][:image][:tempfile]
     end
     @image.person_id = params[:image]['person_id']
