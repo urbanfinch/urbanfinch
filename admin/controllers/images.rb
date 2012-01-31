@@ -13,6 +13,7 @@ Admin.controllers :images do
   post :create do
     unless params[:image][:image].nil?
       @image = Image.new
+      puts params[:image][:image][:tempfile]
       @image.image = params[:image][:image][:tempfile]
       @image.person_id = params[:image]['person_id']
       @image.client_id = params[:image]['client_id']
