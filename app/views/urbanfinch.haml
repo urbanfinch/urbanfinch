@@ -93,9 +93,10 @@
             - (0...3).each do |i|
               .row
                 - (0...3).each do |j|
-                  - unless @clients[i + j].nil? || @clients[i + j].image.nil?
-                    %a{:href => "#{@clients[i * j].url}", :title => "#{@clients[i * j].name} - #{@clients[i * j].url}"}
-                      %img{:src => "data:#{@clients[i * j].image.image.type};base64,#{Base64.encode64(@clients[i * j].image.image.read)}", :alt => 'logo'}
+                  - unless @clients[i + j].nil?
+                    - unless @clients[i + j].image.nil?
+                      %a{:href => "#{@clients[i * j].url}", :title => "#{@clients[i * j].name} - #{@clients[i * j].url}"}
+                        %img{:src => "data:#{@clients[i * j].image.image.type};base64,#{Base64.encode64(@clients[i * j].image.image.read)}", :alt => 'logo'}
           %div{:id => 'the_people', :class => 'segment'}
             .slider
               .slider_container
