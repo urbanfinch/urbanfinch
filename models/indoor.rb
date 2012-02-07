@@ -3,6 +3,7 @@ class Indoor
 
   key :name, String
   key :description, String
+  key :position, Integer
   
   timestamps!
 end

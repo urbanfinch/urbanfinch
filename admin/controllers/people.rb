@@ -1,7 +1,7 @@
 Admin.controllers :people do
 
   get :index do
-    @people = Person.all
+    @people = Person.sort(:position)
     render 'people/index'
   end
 

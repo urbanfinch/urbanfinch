@@ -1,7 +1,7 @@
 Admin.controllers :indoors do
 
   get :index do
-    @indoors = Indoor.all
+    @indoors = Indoor.sort(:position)
     render 'indoors/index'
   end
 

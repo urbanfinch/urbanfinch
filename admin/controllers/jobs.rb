@@ -1,7 +1,7 @@
 Admin.controllers :jobs do
 
   get :index do
-    @jobs = Job.all
+    @jobs = Job.sort(:position)
     render 'jobs/index'
   end
 

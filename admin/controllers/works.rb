@@ -1,7 +1,7 @@
 Admin.controllers :works do
 
   get :index do
-    @works = Work.all
+    @works = Work.sort(:position)
     render 'works/index'
   end
 

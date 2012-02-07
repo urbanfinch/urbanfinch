@@ -4,10 +4,10 @@ Urbanfinch.controllers :index do
   
   get :index, :map => '/' do
     @clients = Client.all.sort_by{ rand }.take(9)
-    @people = Person.all
-    @services = Service.all
-    @indoors = Indoor.all
-    @works = Work.all
+    @people = Person.sort(:position)
+    @services = Service.sort(:position)
+    @indoors = Indoor.sort(:position)
+    @works = Work.sort(:position)
     
     render :urbanfinch
   end

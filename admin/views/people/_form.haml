@@ -16,7 +16,12 @@
   =f.text_field :email, :class => :text_field
   %span.description Ex: The person email
 
-
+.group
+  =f.label :position
+  =f.error_message_on :position
+  =f.text_field :position, :class => :text_field
+  %span.description Ex: The person position.
+    
 .group.navform.wat-cf
   =f.submit pat(:save), :class => :button
   =f.submit pat(:cancel), :onclick => "window.location='#{url(:people, :index)}';return false", :class => :button

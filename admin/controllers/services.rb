@@ -1,7 +1,7 @@
 Admin.controllers :services do
 
   get :index do
-    @services = Service.all
+    @services = Service.sort(:position)
     render 'services/index'
   end
 

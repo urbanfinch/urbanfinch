@@ -4,7 +4,12 @@
   =f.text_field :name, :class => :text_field
   %span.description Ex: The work name
 
-
+.group
+  =f.label :position
+  =f.error_message_on :position
+  =f.text_field :position, :class => :text_field
+  %span.description Ex: The work position.
+    
 .group.navform.wat-cf
   =f.submit pat(:save), :class => :button
   =f.submit pat(:cancel), :onclick => "window.location='#{url(:works, :index)}';return false", :class => :button

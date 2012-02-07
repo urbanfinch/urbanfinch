@@ -3,6 +3,7 @@ class Job
   
   key :name, String
   key :url, String
+  key :position, Integer
   one :image
   belongs_to :work
   
