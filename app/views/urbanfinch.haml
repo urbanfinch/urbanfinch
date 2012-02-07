@@ -119,20 +119,20 @@
           %h1 THE SERVICES
           %nav{:class => 'segment'}
             - @services.each do |service|
-              %a{:class => "services_#{service.name.downcase} large", :href => "#services_#{service.name.downcase}", :title => "#{service.name.upcase}"}= service.name.upcase
+              %a{:class => "services_#{service.name.downcase.gsub(/\s/, '_')} large", :href => "#services_#{service.name.downcase.gsub(/\s/, '_')}", :title => "#{service.name.upcase}"}= service.name.upcase
         .inner_body
           - @services.each do |service|
-            %div{:id => "services_#{service.name.downcase}", :class => 'segment'}= service.description
+            %div{:id => "services_#{service.name.downcase.gsub(/\s/, '_')}", :class => 'segment'}= service.description
     %section{:id => 'the_work'}
       .container
         .inner_header
           %h1 THE WORK
           %nav{:class => 'segment'}
             - @works.each do |work|
-              %a{:class => "work_#{work.name.downcase} large", :href => "#work_#{work.name.downcase}", :title => "#{work.name.upcase}"}= work.name.upcase
+              %a{:class => "work_#{work.name.downcase.gsub(/\s/, '_')} large", :href => "#work_#{work.name.downcase.gsub(/\s/, '_')}", :title => "#{work.name.upcase}"}= work.name.upcase
         .inner_body
           - @works.each do |work|
-            %div{:id => "work_#{work.name.downcase}", :class => 'segment'}
+            %div{:id => "work_#{work.name.downcase.gsub(/\s/, '_')}", :class => 'segment'}
               .slider
                 .slider_container
                   - work.jobs.each do |job|
@@ -152,10 +152,10 @@
           %h1 THE INDOOR
           %nav{:class => 'segment'}
             - @indoors.each do |indoor|
-              %a{:class => "indoors_#{indoor.name.downcase} large", :href => "#indoors_#{indoor.name.downcase}", :title => "#{indoor.name.upcase}"}= indoor.name.upcase
+              %a{:class => "indoors_#{indoor.name.downcase.gsub(/\s/, '_')} large", :href => "#indoors_#{indoor.name.downcase.gsub(/\s/, '_')}", :title => "#{indoor.name.upcase}"}= indoor.name.upcase
         .inner_body
           - @indoors.each do |indoor|
-            %div{:id => "indoors_#{indoor.name.downcase}", :class => 'segment'}= indoor.description
+            %div{:id => "indoors_#{indoor.name.downcase.gsub(/\s/, '_')}", :class => 'segment'}= indoor.description
     %section{:id => 'the_contacts'}
       .container
         .inner_header

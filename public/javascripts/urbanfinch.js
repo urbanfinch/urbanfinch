@@ -84,7 +84,7 @@ var urbanfinch = {
   },
   
   initSegmentNav: function() {
-    $('nav.segment > a').live('click', function(event) {
+    $('nav.segment > a').click(function(event) {
       urbanfinch.handleSegmentNav($(this).attr('class').split(' ')[0]);
       event.preventDefault();
     });
