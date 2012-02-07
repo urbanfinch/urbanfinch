@@ -169,20 +169,29 @@ section
       min-height: 274px
       padding: 10px
       
-      h2
-        font-family: Bebas
-        font-size: 32px
-        margin-bottom: 16px
-    
-      p
-        span.highlight
-          font-family: Bebas
-        
-        span.bold
-          font-weight: bold
-      
       div.segment
         margin-bottom: 10px
+        
+        div.left
+          float: left
+          max-width: 675px
+
+        div.right
+          float: right
+          width: 276px
+          height: 276px
+
+        h2
+          font-family: Bebas
+          font-size: 32px
+          margin-bottom: 16px
+
+        p
+          span.highlight
+            font-family: Bebas
+
+          span.bold
+            font-weight: bold
         
         div.slider
           position: relative
@@ -264,14 +273,7 @@ section#the_finch
   div.container
     div.inner_body
       div#the_focus
-        div.left
-          float: left
-          max-width: 675px
-            
         div.right
-          float: right
-          width: 276px
-          height: 276px
           background-image: url('/images/box.png')
           
       div#the_clients
