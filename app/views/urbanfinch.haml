@@ -106,7 +106,7 @@
                         %img{:src => "data:#{person.image.image.type};base64,#{Base64.encode64(person.image.image.read.to_s)}", :alt => 'person'}
                     .tag
                       %p
-                        = person.name
+                        %span{:class => 'bold'}= person.name
                         %a{:href => "#{person.email}", :title => "Send mail to #{person.name}…"}= person.email
                     .bio
                       %h3= person.name
@@ -142,7 +142,7 @@
                           %img{:src => "data:#{job.image.image.type};base64,#{Base64.encode64(job.image.image.read.to_s)}", :alt => 'job'}
                       .tag
                         %p
-                          = job.name
+                          %span{:class => 'bold'}= job.name
                           %a{:href => "#{job.url}", :title => "#{job.name}"}= job.url
               %a{:class => 'slider_control previous', :href => '#previous', :title => 'Previous'} Previous
               %a{:class => 'slider_control next', :href => '#next', :title => 'Next'} Next
