@@ -95,7 +95,7 @@
                 - (0...3).each do |j|
                   - if !@clients[i + j].nil? && !@clients[i + j].image.nil?
                     %a{:href => "#{@clients[i + j].url}", :title => "#{@clients[i + j].name} - #{@clients[i + j].url}"}
-                      %img{:src => "data:#{@clients[i + j].image.image.type};base64,#{Base64.encode64(@clients[i + j].image.image.read.to_s)}", :alt => 'logo'}
+                      %img{:src => "/grid/#{@clients[i + j].image.id}", :alt => 'logo'}
           %div{:id => 'the_people', :class => 'segment'}
             .slider
               .slider_container
@@ -103,7 +103,7 @@
                   .slide
                     .image
                       - unless person.image.nil?
-                        %img{:src => "data:#{person.image.image.type};base64,#{Base64.encode64(person.image.image.read.to_s)}", :alt => 'person'}
+                        %img{:src => "/grid/#{person.image.id}", :alt => 'person'}
                     .tag
                       %p
                         %span{:class => 'bold'}= person.name
@@ -139,7 +139,7 @@
                     .slide
                       .image
                         - unless job.image.nil?
-                          %img{:src => "data:#{job.image.image.type};base64,#{Base64.encode64(job.image.image.read.to_s)}", :alt => 'job'}
+                          %img{:src => "/grid/#{job.image.id}", :alt => 'job'}
                       .tag
                         %p
                           %span{:class => 'bold'}= job.name

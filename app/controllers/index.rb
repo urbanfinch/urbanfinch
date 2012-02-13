@@ -12,7 +12,18 @@ Urbanfinch.controllers :index do
     render :urbanfinch
   end
   
-  post '/contact' do
+  get :index, :map => '/grid/:id' do
+    @image = Image.find(params[:id])
+    
+    if @image
+      content_type @image.image.content_type
+      @image.image.read.to_s
+    else
+      404
+    end
+  end
+  
+  post :index, :map => '/contact' do
     begin
       smtp = {
         :address        => "smtp.sendgrid.net",
