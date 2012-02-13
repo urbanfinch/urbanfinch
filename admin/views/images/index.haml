@@ -23,7 +23,7 @@
             %td.first=image.id
             %td
               - unless image.image.nil?
-                %img{:src => "grid/#{image.id}", :alt => 'image', :style => 'max-width: 100px'}
+                %img{:src => "/grid/#{image.id}", :alt => 'image', :style => 'max-width: 100px'}
             %td=image.image_type
             %td=image.image_size
             %td=truncate(image.person_id.to_s, :length => 8)
