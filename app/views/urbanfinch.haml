@@ -93,7 +93,6 @@
             - (0...3).each do |i|
               .row
                 - (0...3).each do |j|
-                  = @clients.to_json
                   - if !@clients[i + j].nil? && !@clients[i + j].image.nil?
                     %a{:href => "#{@clients[i + j].url}", :title => "#{@clients[i + j].name} - #{@clients[i + j].url}"}
                       %img{:src => "/grid/#{@clients[i + j].image.id}", :alt => 'logo'}
