@@ -93,9 +93,9 @@
             - (0...3).each do |i|
               .row
                 - (i*3...(i*3)+3).each do |j|
-                  - if !@clients[i + j].nil? && !@clients[i + j].image.nil?
-                    %a{:href => "#{@clients[i + j].url}", :title => "#{@clients[i + j].name} - #{@clients[i + j].url}"}
-                      %img{:src => "/grid/#{@clients[i + j].image.id}", :alt => 'logo'}
+                  - if !@clients[j].nil? && !@clients[j].image.nil?
+                    %a{:href => "#{@clients[j].url}", :title => "#{@clients[j].name} - #{@clients[j].url}"}
+                      %img{:src => "/grid/#{@clients[j].image.id}", :alt => 'logo'}
           %div{:id => 'the_people', :class => 'segment'}
             .slider
               .slider_container
