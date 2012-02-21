@@ -69,25 +69,27 @@
     %section{:id => 'the_finch'}
       .container
         .inner_header
-          %h1 THE FINCH
+          %h1 THE&nbsp;&nbsp;FINCH
           %nav{:class => 'segment'}
-            %a{:class => 'the_focus small', :href => '#the_focus', :title => 'THE FOCUS'} THE FOCUS
-            %a{:class => 'the_clients small', :href => '#the_clients', :title => 'THE CLIENTS'} THE CLIENTS
-            %a{:class => 'the_people small', :href => '#the_people', :title => 'THE PEOPLE'} THE PEOPLE
+            %a{:class => 'the_focus small', :href => '#the_focus', :title => 'THE FOCUS'} THE&nbsp;&nbsp;FOCUS
+            %a{:class => 'the_clients small', :href => '#the_clients', :title => 'THE CLIENTS'} THE&nbsp;&nbsp;CLIENTS
+            %a{:class => 'the_people small', :href => '#the_people', :title => 'THE PEOPLE'} THE&nbsp;&nbsp;PEOPLE
         .inner_body
           %div{:id => 'the_focus', :class => 'segment'}
             .left
-              %h2 OUR FOCUS IS LOCAL.
+              %h2 OUR&nbsp;&nbsp;FOCUS&nbsp;&nbsp;IS&nbsp;&nbsp;LOCAL.
               %p
                 I guess you could say we have Nebraska Pride. We want to see our local communities thrive and local businesses succeed. 
                 We strive to help the Nebraska business achieve its goals by uncovering insights, developing strategies, 
                 and implementing marketing plans that can close the gap between your brand and audience.
-              %h2 WE DON'T DESCRIMINATE.
+              %h2 WE&nbsp;&nbsp;DON'T&nbsp;&nbsp;DESCRIMINATE.
               %p
                 Every brand, no matter the size, deserves a partnership with quality communication 
-                strategists. Whether a large company looking to increase market share, a small non-profit 
-                trying to spread a message, or a dreamer with an idea. 
-                %span{:class => 'highlight'} WE CAN AND WANT TO HELP.
+                strategists. Whether a large company looking to increase market share,
+                a small non-profit trying to spread
+                %br
+                a message, or a dreamer with an idea. 
+                %span{:class => 'highlight'} WE&nbsp;&nbsp;CAN&nbsp;&nbsp;AND&nbsp;&nbsp;WANT&nbsp;&nbsp;TO&nbsp;&nbsp;HELP.
             .right
           %div{:id => 'the_clients', :class => 'segment'}
             - (0...3).each do |i|
@@ -116,17 +118,53 @@
     %section{:id => 'the_services'}
       .container
         .inner_header
-          %h1 THE SERVICES
-          %nav{:class => 'segment'}
-            - @services.each do |service|
-              %a{:class => "services_#{service.name.downcase.gsub(/\s/, '_')} large", :href => "#services_#{service.name.downcase.gsub(/\s/, '_')}", :title => "#{service.name.upcase}"}= service.name.upcase
+          %h1 THE&nbsp;&nbsp;SERVICES
         .inner_body
-          - @services.each do |service|
-            %div{:id => "services_#{service.name.downcase.gsub(/\s/, '_')}", :class => 'segment'}= service.description
+          .segment
+            %div{:class => 'top'}
+              %div{:class => 'left'}
+                %h2 WEB&nbsp;&nbsp;DEVELOPMENT
+                %p Front End | Website Design and Branding
+                %p 
+                  CMS Development | Custom Management Solutions, 
+                  Database Design and Deployment, Rich Internet Applications
+                %p 
+                  Mobile Development | iOS (iPhone, iPad) applications, 
+                  Mobile Websites and Applications
+              %div{:class => 'middle'}
+                %h2 BRANDING&nbsp;&nbsp;STRATEGY
+                %p 
+                  Consultation, Research, Strategy, 
+                  %br
+                  Full Brand Analysis, and Campaign
+              %div{:class => 'right'}
+                %h2 PHOTOGRAPHY
+                %p Campaign Shoots, Product Shoots
+            %div{:class => 'center'}
+              %div{:class => 'left'}
+              %div{:class => 'middle'}
+                %h2 ILLUSTRATION
+                %p Flyers, Artwork, Posters
+              %div{:class => 'right'}
+                %h2 GUERILLA&nbsp;&nbsp;MARKETING
+                %p Street Advertising, Non-Traditional
+            %div{:class => 'bottom'}
+              %div{:class => 'left'}
+                %h2 DESIGN
+                %p Logo Creation, Print Ads, Digital Ads, Brochures, Annual Reports, Business Cards, Digital Ads
+              %div{:class => 'middle'}
+                %h2 VIDEO
+                %p Corporate Videos, Music Videos, TV Spots, Viral Videos
+              %div{:class => 'right'}
+                %h2 SOCIAL&nbsp;&nbsp;MEDIA
+                %p 
+                  Facebook and Twitter Creation, 
+                  %br
+                  Management, and Strategy
     %section{:id => 'the_work'}
       .container
         .inner_header
-          %h1 THE WORK
+          %h1 THE&nbsp;&nbsp;WORK
           %nav{:class => 'segment'}
             - @works.each do |work|
               %a{:class => "work_#{work.name.downcase.gsub(/\s/, '_')} large", :href => "#work_#{work.name.downcase.gsub(/\s/, '_')}", :title => "#{work.name.upcase}"}= work.name.upcase
@@ -149,48 +187,100 @@
     %section{:id => 'the_indoor'}
       .container
         .inner_header
-          %h1 THE INDOOR
+          %h1 THE&nbsp;&nbsp;INDOOR
           %nav{:class => 'segment'}
-            - @indoors.each do |indoor|
-              %a{:class => "indoors_#{indoor.name.downcase.gsub(/\s/, '_')} large", :href => "#indoors_#{indoor.name.downcase.gsub(/\s/, '_')}", :title => "#{indoor.name.upcase}"}= indoor.name.upcase
+            %a{:class => 'indoor_indoor large', :href => '#indoor_indoor', :title => 'Indoor'} INDOOR
+              
+            %a{:class => 'indoor_why_it_works large', :href => '#indoor_why_it_works', :title => 'Why It Works'} WHY&nbsp;&nbsp;IT&nbsp;&nbsp;WORKS
+            %a{:class => 'indoor_locations large', :href => '#indoor_locations', :title => 'Locations'} LOCATIONS
         .inner_body
-          - @indoors.each do |indoor|
-            %div{:id => "indoors_#{indoor.name.downcase.gsub(/\s/, '_')}", :class => 'segment'}= indoor.description
+          %div{:id => 'indoor_indoor', :class => 'segment'}
+            %div{:class => 'left'}
+              %h2 INDEPENDENT&nbsp;&nbsp;RESEARCH&nbsp;&nbsp;TELLS&nbsp;&nbsp;US…
+              %p{:style => 'margin-bottom: 0px; line-height: 18px;'}
+                %span{:class => 'bold'} Consumer attitudes toward restroom advertising were found to be very positive with as much as
+                %span{:class => 'highlight'} 98%
+                %span{:class => 'bold'} of those surveyed indicating a favorable reaction
+              %p{:style => 'font-size: 14px; font-style: italic;'} Arizona State University Study
+              %p{:style => 'margin-bottom: 0px; line-height: 18px;'}
+                %span{:class => 'bold'} Retention of impressions generated by restroom advertising was found to be on average,
+                %span{:class => 'highlight'} 40%
+                %span{:class => 'bold'} stronger than impressions by other media.
+              %p{:style => 'font-size: 14px; font-style: italic;'} Rice University Study
+              %p{:style => 'margin-bottom: 0px; line-height: 18px;'}
+                %span{:class => 'bold'} 
+                  When restroom advertising viewers are shopping for a product or service, retention of that
+                  particular product or service advertised raises to an
+                %span{:class => 'highlight'} 85%
+                %span{:class => 'bold'} rate.
+              %p{:style => 'font-size: 14px; font-style: italic;'} Market Intelligence Media Research
+            %div{:class => 'right'}
+              %img{:id => 'indoor_door', :src => '/images/door.png', :alt => 'Indoor'}
+          %div{:id => 'indoor_why_it_works', :class => 'segment'}
+            .slider
+              .slider_container
+                .slide
+                  .image
+                    %img{:src => "", :alt => 'job'}
+                  .tag
+                    %p
+                      %span{:class => 'bold'}
+                      %a{:href => "/", :title => ""}
+            %a{:class => 'slider_control previous', :href => '#previous', :title => 'Previous'} Previous
+            %a{:class => 'slider_control next', :href => '#next', :title => 'Next'} Next
+          %div{:id => 'indoor_locations', :class => 'segment'}
+            %div{:class => 'left', :style => 'width: 50%; max-width: 50%;'}
+              %h2 Omaha
+              %ul
+                %li Cunningham’s (2101 N. 120th St.)
+                %li On the Rocks (16919 Audrey Street)
+                %li Varsity (9735 Q St.)
+                %li Varsity (14529 F St.)
+                %li Moylan Iceplex (12550 W. Maple Rd.)
+                %li Aspen Athletics (17725 Welch Plaza)
+                %li Bene Pizza (12301 W. Maple Rd.)
+            %div{:class => 'right', :style => 'width: 50%; max-width: 50%;'}
+              %h2 Lincoln
+              %ul
+                %li 12th St. Pub (1200 O St.)
+                %li Bison Witches (1320 P St.)
+                %li Anytime Fitness (27th and Superior)
     %section{:id => 'the_contacts'}
       .container
         .inner_header
-          %h1 THE CONTACTS
+          %h1 THE&nbsp;&nbsp;CONTACTS
           %nav
         .inner_body
-          .left
-            %h2 HIRE THE FINCH
-            %address
-              %span{:class => 'bold'} Urban Finch
-              %br
-              5555 Example Ave.
-              %br
-              Omaha NE, 68686
-            %p
-              %a{:href => 'tel:1-402-444-5555', :title => 'Call us!'} 1-402-444-5555
-            %p
-              %a{:href => 'mailto:thefinch@urbanfinch.com', :title => 'Send us mail!'} thefinch@urbanfinch.com
-            %h2{:class => 'check_us_out'} CHECK US OUT ON…
-            %nav
-              %a{:id => 'facebook', :href => '#facebook', :title => 'Facebook'} Facebook
-              %a{:id => 'twitter', :href => '#twitter', :title => 'Twitter'} Twitter
-              %a{:id => 'linkedin', :href => '#linkedin', :title => 'LinkedIn'} LinkedIn
-          .right
-            %h2 GET IN TOUCH WITH THE FINCH
-            %form{:id => 'contact', :action => '/contact', :method => 'POST'}
+          .segment
+            .left
+              %h2 HIRE&nbsp;&nbsp;THE&nbsp;&nbsp;FINCH
+              %address
+                %span{:class => 'bold'} Urban Finch
+                %br
+                5555 Example Ave.
+                %br
+                Omaha NE, 68686
               %p
-                %input{:id => 'name', :name => 'name', :type => 'text', :placeholder => 'Name'}
+                %a{:href => 'tel:1-402-444-5555', :title => 'Call us!'} 1-402-444-5555
               %p
-                %input{:id => 'email', :name => 'email', :type => 'email', :placeholder => 'E-Mail'}
-              %p
-                %textarea{:id => 'message', :cols => 1, :rows => 1, :name => 'message', :placeholder => 'Message…'}
-              %p{:class => 'message'}
-              %p{:class => 'loading'}
-              %p
-                %input{:id => 'send', :name => 'send', :value => 'SEND', :type => 'submit'}
+                %a{:href => 'mailto:thefinch@urbanfinch.com', :title => 'Send us mail!'} thefinch@urbanfinch.com
+              %h2{:class => 'check_us_out'} CHECK&nbsp;&nbsp;US&nbsp;&nbsp;OUT&nbsp;&nbsp;ON…
+              %nav
+                %a{:id => 'facebook', :href => '#facebook', :title => 'Facebook'} Facebook
+                %a{:id => 'twitter', :href => '#twitter', :title => 'Twitter'} Twitter
+                %a{:id => 'linkedin', :href => '#linkedin', :title => 'LinkedIn'} LinkedIn
+            .right
+              %h2 GET&nbsp;&nbsp;IN&nbsp;&nbsp;TOUCH&nbsp;&nbsp;WITH&nbsp;&nbsp;THE&nbsp;&nbsp;FINCH
+              %form{:id => 'contact', :action => '/contact', :method => 'POST'}
+                %p
+                  %input{:id => 'name', :name => 'name', :type => 'text', :placeholder => 'Name'}
+                %p
+                  %input{:id => 'email', :name => 'email', :type => 'email', :placeholder => 'E-Mail'}
+                %p
+                  %textarea{:id => 'message', :cols => 1, :rows => 1, :name => 'message', :placeholder => 'Message…'}
+                %p{:class => 'message'}
+                %p{:class => 'loading'}
+                %p
+                  %input{:id => 'send', :name => 'send', :value => 'SEND', :type => 'submit'}
     %footer
       %div{:id => 'skyline'}
