@@ -136,6 +136,17 @@ var urbanfinch = {
     urbanfinch.current_section = 'the_finch';
   },
   
+  initImages: function(segment) {
+    $('img.lazy', segment).each(function() {
+      $(this)
+        .hide()
+        .attr('src', $(this).attr('data-original'))
+        .one('load', function() {
+          $(this).fadeIn().removeClass('lazy').parent().css('background-image', 'none');
+        });
+    });
+  },
+  
   handleContact: function() {
     if($('form#contact').valid()){
 
@@ -191,6 +202,7 @@ var urbanfinch = {
     $('div#' + segment).parent('div.inner_body').find('div.segment').hide();
     $('div#' + segment).show();
     $('div#' + segment + ' div.slider').slider();
+    urbanfinch.initImages($('div#' + segment));
   },
   
   animateLogo: function(callback) {

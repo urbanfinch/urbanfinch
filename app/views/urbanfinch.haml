@@ -17,6 +17,7 @@
     %script{:type => 'text/javascript', :src => '/javascripts/jquery.cookie.min.js'}
     %script{:type => 'text/javascript', :src => '/javascripts/jquery.slider.min.js'}
     %script{:type => 'text/javascript', :src => '/javascripts/jquery.validate.min.js'}
+    %script{:type => 'text/javascript', :src => '/javascripts/jquery.lazyload.min.js'}
     %script{:type => 'text/javascript', :src => '/javascripts/modernizr.js'}
     %script{:type => 'text/javascript', :src => '/javascripts/urbanfinch.js'}
     <!--<![endif]-->
@@ -65,7 +66,7 @@
         %div{:id => 'logo'}
           %a{:href => '/', :title => 'URBAN FINCH'}
         %div{:id => 'animation'}
-          %img{:src => '/', :alt => 'logo'}
+          %img{:src => '/images/placeholder.png', :alt => 'logo'}
     %section{:id => 'the_finch'}
       .container
         .inner_header
@@ -97,7 +98,9 @@
                 - (i*3...(i*3)+3).each do |j|
                   - if !@clients[j].nil? && !@clients[j].image.nil?
                     %a{:href => "#{@clients[j].url}", :title => "#{@clients[j].name} - #{@clients[j].url}"}
-                      %img{:src => "/grid/#{@clients[j].image.id}", :alt => 'logo'}
+                      %img{:src => '/images/placeholder.png', :'data-original' => "/grid/#{@clients[j].image.id}", :width => 290, :height => 82, :alt => 'logo', :class => 'lazy'}
+                      %noscript
+                        %img{:src => "/grid/#{@clients[j].image.id}", :width => 290, :height => 82, :alt => 'job'}
           %div{:id => 'the_people', :class => 'segment'}
             .slider
               .slider_container
@@ -105,7 +108,9 @@
                   .slide
                     .image
                       - unless person.image.nil?
-                        %img{:src => "/grid/#{person.image.id}", :alt => 'person'}
+                        %img{:src => '/images/placeholder.png', :'data-original' => "/grid/#{person.image.id}", :width => 490, :height => 276, :alt => 'person', :class => 'lazy'}
+                        %noscript
+                          %img{:src => "/grid/#{person.image.id}", :width => 490, :height => 276, :alt => 'job'}
                     .tag
                       %p
                         %span{:class => 'bold'}= person.name
@@ -177,7 +182,9 @@
                     .slide
                       .image
                         - unless job.image.nil?
-                          %img{:src => "/grid/#{job.image.id}", :alt => 'job'}
+                          %img{:src => '/images/placeholder.png', :'data-original' => "/grid/#{job.image.id}", :width => 490, :height => 276, :alt => 'job', :class => 'lazy'}
+                          %noscript
+                            %img{:src => "/grid/#{job.image.id}", :width => 490, :height => 276, :alt => 'job'}
                       .tag
                         %p
                           %span{:class => 'bold'}= job.name
@@ -220,7 +227,9 @@
               .slider_container
                 .slide
                   .image
-                    %img{:src => "", :alt => 'job'}
+                    %img{:src => '/images/placeholder.png', :'data-original' => '/images/placeholder.png', :width => '490', :height => '276', :alt => 'job', :class => 'lazy'}
+                    %noscript
+                      %img{:src => '/images/placeholder.png', :width => '490', :height => '276', :alt => 'job'}
                   .tag
                     %p
                       %span{:class => 'bold'}
