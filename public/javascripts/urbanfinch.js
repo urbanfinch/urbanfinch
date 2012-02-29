@@ -4,10 +4,12 @@ var urbanfinch = {
   current_section: null,
   
   run: function() {
-    if($.cookie("css")) {
-      urbanfinch.setTheme($.cookie("css"));
-    } else {
-      urbanfinch.setTheme('/stylesheets/hybrid.css');
+    if (!window.IE6) {
+      if($.cookie("css")) {
+        urbanfinch.setTheme($.cookie("css"));
+      } else {
+        urbanfinch.setTheme('/stylesheets/hybrid.css');
+      }
     }
     
     /* Initialize CSS fixes */
@@ -62,18 +64,22 @@ var urbanfinch = {
   },
   
   initThemeNav: function() {
-    $('nav#themes > a#blue').click(function(event) {
-      urbanfinch.setTheme($(this).attr('href'));
-      event.preventDefault();
-    });
-    $('nav#themes > a#orange').click(function(event) {
-      urbanfinch.setTheme($(this).attr('href'));
-      event.preventDefault();
-    });
-    $('nav#themes > a#hybrid').click(function(event) {
-      urbanfinch.setTheme($(this).attr('href'));
-      event.preventDefault();
-    });
+    if (!window.IE6) {
+      $('nav#themes > a#blue').click(function(event) {
+        urbanfinch.setTheme($(this).attr('href'));
+        event.preventDefault();
+      });
+      $('nav#themes > a#orange').click(function(event) {
+        urbanfinch.setTheme($(this).attr('href'));
+        event.preventDefault();
+      });
+      $('nav#themes > a#hybrid').click(function(event) {
+        urbanfinch.setTheme($(this).attr('href'));
+        event.preventDefault();
+      });
+    } else {
+      $('nav#themes').hide();
+    }
   },
   
   initSegmentNav: function() {
@@ -184,13 +190,15 @@ var urbanfinch = {
   },
   
   setTheme: function(theme) {
-    $("link#theme").attr("href", theme);
-    $.cookie("css", theme, {expires: 365, path: '/'});
-    if (theme.search("orange") > 0) {
-      urbanfinch.current_theme = 'orange';
-    } else {
-      urbanfinch.current_theme = 'blue';
-    };
+    if ($("link#theme")) {
+      $("link#theme").attr("href", theme);
+      $.cookie("css", theme, {expires: 365, path: '/'});
+      if (theme.search("orange") > 0) {
+        urbanfinch.current_theme = 'orange';
+      } else {
+        urbanfinch.current_theme = 'blue';
+      };
+    }
   },
   
   animateSectionOpen: function(section, callback) {

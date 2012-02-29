@@ -1,0 +1,136 @@
+@import "shared"
+
+/* Colors */
+
+$blue: #637C86
+
+html
+  @include background-size(cover)
+  background: url('/images/ie/watermark.gif') no-repeat center center fixed
+  
+body
+  background: url('/images/ie/skyline.gif') no-repeat center bottom fixed
+  
+  a
+    +link-colors($white)
+  
+header
+  nav#main
+    background-image: url('/images/ie/nav.gif')
+    
+    a
+      span.finch_left
+        background-image: url('/images/ie/finch_left.gif')
+        opacity: 0.8
+        
+      span.finch_right
+        background-image: url('/images/ie/finch_right.gif')
+        opacity: 0.8
+        
+  div#logo
+    background-image: url('/images/ie/logo_small.gif')
+    opacity: 0.8
+      
+section
+  color: $white
+  
+  div.container
+    background: $blue
+    // IE 7 must have background not background-color!
+    background: rgba(99,124,134,0.5)
+    
+    div.header
+      nav
+        a.small
+          background-image: url('/images/ie/button_small.gif')
+        
+        a.large
+          background-image: url('/images/ie/button_large.gif')
+        
+    div.segment
+      background: $blue
+      // IE 7 must have background not background-color!
+      background: rgba(99,124,134,0.8)
+    
+      div.slider
+        background: $blue
+        // IE 7 must have background not background-color!
+        background: rgba(99,124,134,0.9)
+      
+        div.slide
+          div.image
+            background-image: url('/images/ie/loader.gif')
+            background-position: 50%
+            background-repeat: no-repeat
+          
+          div.tag
+            p
+              background: $blue
+              // IE 7 must have background not background-color!
+              background: rgba(99,124,134,0.8)
+                
+      a.previous
+        background-image: url('/images/ie/previous.gif')
+
+      a.next
+        background-image: url('/images/ie/next.gif')
+      
+section#the_finch
+  div.container
+    div#the_clients
+      div.row
+        a
+          background-image: url('/images/ie/loader.gif')
+          background-position: 50%
+          background-repeat: no-repeat
+          
+    div#the_focus
+      div.right
+        background-image: url('/images/ie/box.gif')
+
+section#the_services
+  div.container
+    div.segment
+      div
+        h2
+          background-image: url('/images/ie/header.gif')
+                      
+section#the_indoor
+  div.container
+    div.door
+      background-image: url('/images/ie/door.gif')
+      background-position: 50%
+      background-repeat: no-repeat
+        
+section#the_contacts
+  div.container
+    div.left
+      nav
+        a#facebook
+          background-image: url('/images/ie/facebook.gif')
+          
+        a#twitter
+          background-image: url('/images/ie/twitter.gif')
+            
+        a#linkedin
+          background-image: url('/images/ie/linkedin.gif')
+          
+    div.right
+      form
+        input,
+        textarea
+          background-color: $white
+          outline-color: $white
+          color: $black
+          
+        input::-webkit-input-placeholder,
+        textarea::-webkit-input-placeholder
+          color: $blue
+          
+        input[type=submit]
+          outline: none
+          background-image: url('/images/ie/button_small.gif')
+          color: $white
+          
+        p.loading
+          background-image: url('/images/ie/loader.gif')
