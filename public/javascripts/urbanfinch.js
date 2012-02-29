@@ -34,7 +34,7 @@ var urbanfinch = {
     }
     
     $('div.segment').css('margin-top', '0px');
-    $('body').css('height', $(document).height());
+    $('body').css('height', window.innerHeight);
   },
   
   initMainNav: function() {
