@@ -6,7 +6,12 @@
     %meta{:name => 'description', :content => 'URBAN FINCH'}
     %link{:rel => 'icon', :type => 'image/png', :href => '/images/favicon.png'}
     %link{:rel => 'shortcut icon', :type => 'image/png', :href => '/images/favicon.png'}
+    <!--[if ! lte IE 6]><!-->
     %link{:id => 'theme', :rel => 'stylesheet', :href => '/stylesheets/hybrid.css', :title => 'URBAN FINCH', :media => 'screen, projection', :type => 'text/css'}
+    <!--<![endif]-->
+    <!--[if lte IE 6]><!-->
+    %link{:id => 'theme', :rel => 'stylesheet', :href => 'http://universal-ie6-css.googlecode.com/files/ie6.1.1.css', :title => 'URBAN FINCH', :media => 'screen, projection', :type => 'text/css'}
+    <!--<![endif]-->
     %script{:type => 'text/javascript', :src => '/javascripts/jquery.min.js'}
     %script{:type => 'text/javascript', :src => '/javascripts/jquery.cookie.min.js'}
     %script{:type => 'text/javascript', :src => '/javascripts/jquery.slider.min.js'}

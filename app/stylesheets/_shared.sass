@@ -127,6 +127,7 @@ section
         float: left
         font-family: "Bebas", Impact, sans-serif
         font-size: 24px
+        height: 24px
   
       nav
         float: right
@@ -150,18 +151,19 @@ section
           width: 110px
     
     div.segment
+      position: relative
       height: 274px
       padding: 10px
       margin-top: 10px
     
       div.left
         float: left
+        width: 50%
         height: 274px
-        max-width: 675px
 
       div.right
         float: right
-        width: 274px
+        width: 50%
         height: 274px
 
       h2
@@ -207,6 +209,8 @@ section
         div.slider_container
           height: 274px
           position: absolute
+          top: 0px
+          left: 0px
         
           div.slide
             float: left
@@ -255,6 +259,10 @@ section
       
 section#the_finch
   div.container
+    div#the_focus
+      div.right
+        width: 274px
+        
     div#the_clients
       div.row
         width: 930px
@@ -305,8 +313,7 @@ section#the_services
       div.middle,
       div.right
         float: left
-        width: 28%
-        max-width: 28%
+        width: 27%
         height: 91px
         
       div.middle
@@ -325,7 +332,12 @@ section#the_services
         p
           font-size: 14px
           line-height: 16px
-                          
+          
+section#the_indoor
+  div.container
+    div.right
+      width: 274px
+      
 section#the_contacts
   div.container
     h2

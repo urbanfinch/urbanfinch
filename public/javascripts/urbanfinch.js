@@ -194,7 +194,7 @@ var urbanfinch = {
   },
   
   animateSectionOpen: function(section, callback) {
-    $(section).css('top', window.innerHeight);
+    $(section).css('top', $(window).height());
     $(section).css('display', 'block');
 
     $(section).animate({
@@ -208,7 +208,7 @@ var urbanfinch = {
   
   animateSectionClose: function(section, callback) {
     $(section).animate({
-      top: window.innerHeight
+      top: $(window).height()
     }, 750, function() {
       $(section).css('top', '0px');
       $(section).css('display', 'none');
