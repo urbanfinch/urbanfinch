@@ -6,21 +6,15 @@
     %meta{:name => 'description', :content => 'URBAN FINCH'}
     %link{:rel => 'icon', :type => 'image/png', :href => '/images/favicon.png'}
     %link{:rel => 'shortcut icon', :type => 'image/png', :href => '/images/favicon.png'}
-    <!--[if ! lte IE 6]><!-->
     %link{:id => 'theme', :rel => 'stylesheet', :href => '/stylesheets/hybrid.css', :title => 'URBAN FINCH', :media => 'screen, projection', :type => 'text/css'}
-    <!--<![endif]-->
-    /[if lte IE 6]
-      %link{:rel=>'stylesheet', :href=>'http://universal-ie6-css.googlecode.com/files/ie6.1.1.css', :title => 'URBAN FINCH', :media => 'screen, projection', :type => 'text/css'}
-    /[if lt IE 9]
-      %script{:type => 'text/javascript', :src => 'http://html5shiv.googlecode.com/svn/trunk/html5.js'}
-    <!--[if ! lte IE 6]><!-->
     %script{:type => 'text/javascript', :src => '/javascripts/jquery.min.js'}
     %script{:type => 'text/javascript', :src => '/javascripts/jquery.cookie.min.js'}
     %script{:type => 'text/javascript', :src => '/javascripts/jquery.slider.min.js'}
     %script{:type => 'text/javascript', :src => '/javascripts/jquery.validate.min.js'}
     %script{:type => 'text/javascript', :src => '/javascripts/modernizr.js'}
     %script{:type => 'text/javascript', :src => '/javascripts/urbanfinch.js'}
-    <!--<![endif]-->
+    /[if lt IE 9]
+      %script{:type => 'text/javascript', :src => 'http://html5shiv.googlecode.com/svn/trunk/html5.js'}
     :javascript
     
       /* Initiate the application javascript and run */
@@ -33,7 +27,7 @@
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-9687987-16']);
       _gaq.push(['_trackPageview']);
-
+      
       (function() {
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -42,276 +36,248 @@
     %title URBAN FINCH
   %body
     %header
-      .container
-        %nav{:id => 'main'}
-          %a{:class => 'the_finch', :href => '#the_finch', :title => 'THE FINCH'}
-            THE FINCH
-            %span{:class => 'the_finch finch_right'}
-          %a{:class => 'the_services', :href => '#the_services', :title => 'THE SERVICES'}
-            THE SERVICES
-            %span{:class => 'the_services finch_left'}
-          %a{:class => 'the_work', :href => '#the_work', :title => 'THE WORK'}
-            THE WORK
-            %span{:class => 'the_work finch_right'}
-          %a{:class => 'the_indoor', :href => '#the_indoor', :title => 'THE INDOOR'}
-            THE INDOOR
-            %span{:class => 'the_indoor finch_left'}
-          %a{:class => 'the_contacts', :href => '#the_contacts', :title => 'THE CONTACTS'}
-            THE CONTACTS
-            %span{:class => 'the_contacts finch_right'}
-        %nav{:id => 'themes'}
-          %a{:id => 'blue', :href => '/stylesheets/blue.css', :title => 'BLUE'} BLUE
-          %a{:id => 'orange', :href => '/stylesheets/orange.css', :title => 'ORANGE'} ORANGE
-          %a{:id => 'hybrid', :href => '/stylesheets/hybrid.css', :title => 'HYBRID'} HYBRID
-        %div{:id => 'logo'}
-          %a{:href => '/', :title => 'URBAN FINCH'}
-        %div{:id => 'animation'}
-          %img{:src => '/images/placeholder.png', :alt => 'logo'}
+      %nav{:id => 'main'}
+        %a{:class => 'the_finch', :href => '#the_finch', :title => 'THE FINCH'}
+          THE FINCH
+          %span{:class => 'the_finch finch_right'}
+        %a{:class => 'the_services', :href => '#the_services', :title => 'THE SERVICES'}
+          THE SERVICES
+          %span{:class => 'the_services finch_left'}
+        %a{:class => 'the_work', :href => '#the_work', :title => 'THE WORK'}
+          THE WORK
+          %span{:class => 'the_work finch_right'}
+        %a{:class => 'the_indoor', :href => '#the_indoor', :title => 'THE INDOOR'}
+          THE INDOOR
+          %span{:class => 'the_indoor finch_left'}
+        %a{:class => 'the_contacts', :href => '#the_contacts', :title => 'THE CONTACTS'}
+          THE CONTACTS
+          %span{:class => 'the_contacts finch_right'}
+      %nav{:id => 'themes'}
+        %a{:id => 'blue', :href => '/stylesheets/blue.css', :title => 'BLUE'} BLUE
+        %a{:id => 'orange', :href => '/stylesheets/orange.css', :title => 'ORANGE'} ORANGE
+        %a{:id => 'hybrid', :href => '/stylesheets/hybrid.css', :title => 'HYBRID'} HYBRID
+      %div{:id => 'logo'}
+        %a{:href => '/', :title => 'URBAN FINCH'}
     %section{:id => 'the_finch'}
       .container
-        .inner_header
+        %div{:class => 'header'}
           %h1 THE&nbsp;&nbsp;FINCH
           %nav{:class => 'segment'}
             %a{:class => 'the_focus small', :href => '#the_focus', :title => 'THE FOCUS'} THE&nbsp;&nbsp;FOCUS
             %a{:class => 'the_clients small', :href => '#the_clients', :title => 'THE CLIENTS'} THE&nbsp;&nbsp;CLIENTS
             %a{:class => 'the_people small', :href => '#the_people', :title => 'THE PEOPLE'} THE&nbsp;&nbsp;PEOPLE
-        .inner_body
-          %div{:id => 'the_focus', :class => 'segment'}
-            .left
-              %h2 OUR&nbsp;&nbsp;FOCUS&nbsp;&nbsp;IS&nbsp;&nbsp;LOCAL.
-              %p
-                I guess you could say we have Nebraska Pride. We want to see our local communities thrive and local businesses succeed. 
-                We strive to help the Nebraska business achieve its goals by uncovering insights, developing strategies, 
-                and implementing marketing plans that can close the gap between your brand and audience.
-              %h2 WE&nbsp;&nbsp;DON'T&nbsp;&nbsp;DISCRIMINATE.
-              %p
-                Every brand, no matter the size, deserves a partnership with quality communication 
-                strategists. Whether a large company looking to increase market share,
-                a small non-profit trying to spread
-                %br
-                a message, or a dreamer with an idea. 
-                %span{:class => 'highlight'} WE&nbsp;&nbsp;CAN&nbsp;&nbsp;AND&nbsp;&nbsp;WANT&nbsp;&nbsp;TO&nbsp;&nbsp;HELP.
-            .right
-          %div{:id => 'the_clients', :class => 'segment'}
-            - (0...3).each do |i|
-              .row
-                - (i*3...(i*3)+3).each do |j|
-                  - if !@clients[j].nil? && !@clients[j].image.nil?
-                    %a{:href => "#{@clients[j].url}", :title => "#{@clients[j].name} - #{@clients[j].url}"}
-                      %img{:src => '/images/placeholder.png', :'data-original' => "/grid/#{@clients[j].image.id}", :width => 290, :height => 82, :alt => 'logo', :class => 'lazy'}
-                      %noscript
-                        %img{:src => "/grid/#{@clients[j].image.id}", :width => 290, :height => 82, :alt => 'job'}
-          %div{:id => 'the_people', :class => 'segment'}
-            .slider
-              .slider_container
-                - @people.each do |person|
-                  .slide
-                    .image
-                      - unless person.image.nil?
-                        %img{:src => '/images/placeholder.png', :'data-original' => "/grid/#{person.image.id}", :width => 490, :height => 276, :alt => 'person', :class => 'lazy'}
-                        %noscript
-                          %img{:src => "/grid/#{person.image.id}", :width => 490, :height => 276, :alt => 'job'}
-                    .tag
-                      %p
-                        %span{:class => 'bold'}= person.name
-                        %a{:href => "#{person.email}", :title => "Send mail to #{person.name}…"}= person.email
-                    .bio
-                      %h3= person.name
-                      %p= person.bio
-            %a{:class => 'slider_control previous', :href => '#previous', :title => 'Previous'} Previous
-            %a{:class => 'slider_control next', :href => '#next', :title => 'Next'} Next
+        %div{:id => 'the_focus', :class => 'segment'}
+          .left
+            %h2 OUR&nbsp;&nbsp;FOCUS&nbsp;&nbsp;IS&nbsp;&nbsp;LOCAL.
+            %p
+              I guess you could say we have Nebraska Pride. We want to see our local communities thrive and local businesses succeed. 
+              We strive to help the Nebraska business achieve its goals by uncovering insights, developing strategies, 
+              and implementing marketing plans that can close the gap between your brand and audience.
+            %h2 WE&nbsp;&nbsp;DON'T&nbsp;&nbsp;DISCRIMINATE.
+            %p
+              Every brand, no matter the size, deserves a partnership with quality communication 
+              strategists. Whether a large company looking to increase market share,
+              a small non-profit trying to spread
+              %br
+              a message, or a dreamer with an idea. 
+              %span{:class => 'highlight'} WE&nbsp;&nbsp;CAN&nbsp;&nbsp;AND&nbsp;&nbsp;WANT&nbsp;&nbsp;TO&nbsp;&nbsp;HELP.
+          .right
+        %div{:id => 'the_clients', :class => 'segment'}
+          - (0...3).each do |i|
+            .row
+              - (i*3...(i*3)+3).each do |j|
+                - if !@clients[j].nil? && !@clients[j].image.nil?
+                  %a{:href => "#{@clients[j].url}", :title => "#{@clients[j].name} - #{@clients[j].url}"}
+                    %img{:src => '/images/placeholder.png', :'data-original' => "/grid/#{@clients[j].image.id}", :width => 290, :height => 82, :alt => 'logo', :class => 'lazy'}
+        %div{:id => 'the_people', :class => 'segment'}
+          .slider
+            .slider_container
+              - @people.each do |person|
+                .slide
+                  .image
+                    - unless person.image.nil?
+                      %img{:src => '/images/placeholder.png', :'data-original' => "/grid/#{person.image.id}", :width => 490, :height => 276, :alt => 'person', :class => 'lazy'}
+                  .tag
+                    %p
+                      %span{:class => 'bold'}= person.name
+                      %a{:href => "#{person.email}", :title => "Send mail to #{person.name}…"}= person.email
+                  .bio
+                    %h3= person.name
+                    %p= person.bio
+          %a{:class => 'slider_control previous', :href => '#previous', :title => 'Previous'} Previous
+          %a{:class => 'slider_control next', :href => '#next', :title => 'Next'} Next
     %section{:id => 'the_services'}
       .container
-        .inner_header
+        %div{:class => 'header'}
           %h1 THE&nbsp;&nbsp;SERVICES
-        .inner_body
-          .segment
-            %div{:class => 'top'}
-              %div{:class => 'left'}
-                %h2 WEB&nbsp;&nbsp;DEVELOPMENT
-                %p Front End | Website Design and Branding
-                %p 
-                  CMS Development | Custom Management Solutions, 
-                  Database Design and Deployment, Rich Internet Applications
-                %p 
-                  Mobile Development | iOS (iPhone, iPad) applications, 
-                  Mobile Websites and Applications
-              %div{:class => 'middle'}
-                %h2 BRANDING&nbsp;&nbsp;STRATEGY
-                %p 
-                  Consultation, Research, Strategy, 
-                  %br
-                  Full Brand Analysis, and Campaign
-              %div{:class => 'right'}
-                %h2 PHOTOGRAPHY
-                %p Campaign Shoots, Product Shoots
-            %div{:class => 'center'}
-              %div{:class => 'left'}
-              %div{:class => 'middle'}
-                %h2 ILLUSTRATION
-                %p Flyers, Artwork, Posters
-              %div{:class => 'right'}
-                %h2 GUERILLA&nbsp;&nbsp;MARKETING
-                %p Street Advertising, Non-Traditional
-            %div{:class => 'bottom'}
-              %div{:class => 'left'}
-                %h2 DESIGN
-                %p Logo Creation, Print Ads, Digital Ads, Brochures, Annual Reports, Business Cards
-              %div{:class => 'middle'}
-                %h2 VIDEO
-                %p Corporate Videos, Music Videos, TV Spots, Viral Videos
-              %div{:class => 'right'}
-                %h2 SOCIAL&nbsp;&nbsp;MEDIA
-                %p 
-                  Facebook and Twitter Creation, 
-                  %br
-                  Management, and Strategy
+        %div{:class => 'segment'}
+          %div{:class => 'top'}
+            %div{:class => 'left'}
+              %h2 WEB&nbsp;&nbsp;DEVELOPMENT
+              %p Front End | Website Design and Branding
+              %p 
+                CMS Development | Custom Management Solutions, 
+                Database Design and Deployment, Rich Internet Applications
+              %p 
+                Mobile Development | iOS (iPhone, iPad) applications, 
+                Mobile Websites and Applications
+            %div{:class => 'middle'}
+              %h2 BRANDING&nbsp;&nbsp;STRATEGY
+              %p 
+                Consultation, Research, Strategy, 
+                %br
+                Full Brand Analysis, and Campaign
+            %div{:class => 'right'}
+              %h2 PHOTOGRAPHY
+              %p Campaign Shoots, Product Shoots
+          %div{:class => 'center'}
+            %div{:class => 'left'}
+            %div{:class => 'middle'}
+              %h2 ILLUSTRATION
+              %p Flyers, Artwork, Posters
+            %div{:class => 'right'}
+              %h2 GUERILLA&nbsp;&nbsp;MARKETING
+              %p Street Advertising, Non-Traditional
+          %div{:class => 'bottom'}
+            %div{:class => 'left'}
+              %h2 DESIGN
+              %p Logo Creation, Print Ads, Digital Ads, Brochures, Annual Reports, Business Cards
+            %div{:class => 'middle'}
+              %h2 VIDEO
+              %p Corporate Videos, Music Videos, TV Spots, Viral Videos
+            %div{:class => 'right'}
+              %h2 SOCIAL&nbsp;&nbsp;MEDIA
+              %p 
+                Facebook and Twitter Creation, 
+                %br
+                Management, and Strategy
     %section{:id => 'the_work'}
       .container
-        .inner_header
+        %div{:class => 'header'}
           %h1 THE&nbsp;&nbsp;WORK
           %nav{:class => 'segment'}
             - @works.each do |work|
               %a{:class => "work_#{work.name.downcase.gsub(/\s/, '_')} large", :href => "#work_#{work.name.downcase.gsub(/\s/, '_')}", :title => "#{work.name.upcase}"}= work.name.upcase
-        .inner_body
-          - @works.each do |work|
-            %div{:id => "work_#{work.name.downcase.gsub(/\s/, '_')}", :class => 'segment'}
-              .slider
-                .slider_container
-                  - work.jobs.sort(:position).each do |job|
-                    .slide
-                      .image
-                        - unless job.image.nil?
-                          %img{:src => '/images/placeholder.png', :'data-original' => "/grid/#{job.image.id}", :width => 490, :height => 276, :alt => 'job', :class => 'lazy'}
-                          %noscript
-                            %img{:src => "/grid/#{job.image.id}", :width => 490, :height => 276, :alt => 'job'}
-                      .tag
-                        %p
-                          %span{:class => 'bold'}= job.name
-                          %a{:href => "#{job.url}", :title => "#{job.name}"}= job.url
-              %a{:class => 'slider_control previous', :href => '#previous', :title => 'Previous'} Previous
-              %a{:class => 'slider_control next', :href => '#next', :title => 'Next'} Next
+        - @works.each do |work|
+          %div{:id => "work_#{work.name.downcase.gsub(/\s/, '_')}", :class => 'segment'}
+            .slider
+              .slider_container
+                - work.jobs.sort(:position).each do |job|
+                  .slide
+                    .image
+                      - unless job.image.nil?
+                        %img{:src => '/images/placeholder.png', :'data-original' => "/grid/#{job.image.id}", :width => 490, :height => 276, :alt => 'job', :class => 'lazy'}
+                    .tag
+                      %p
+                        %span{:class => 'bold'}= job.name
+                        %a{:href => "#{job.url}", :title => "#{job.name}"}= job.url
+            %a{:class => 'slider_control previous', :href => '#previous', :title => 'Previous'} Previous
+            %a{:class => 'slider_control next', :href => '#next', :title => 'Next'} Next
     %section{:id => 'the_indoor'}
       .container
-        .inner_header
+        %div{:class => 'header'}
           %h1 THE&nbsp;&nbsp;INDOOR
           %nav{:class => 'segment'}
             %a{:class => 'indoor_indoor large', :href => '#indoor_indoor', :title => 'Indoor'} INDOOR
-              
+            
             %a{:class => 'indoor_why_it_works large', :href => '#indoor_why_it_works', :title => 'Why It Works'} WHY&nbsp;&nbsp;IT&nbsp;&nbsp;WORKS
             %a{:class => 'indoor_locations large', :href => '#indoor_locations', :title => 'Locations'} LOCATIONS
-        .inner_body
-          %div{:id => 'indoor_indoor', :class => 'segment'}
-            %div{:class => 'left'}
-              %h2 INDEPENDENT&nbsp;&nbsp;RESEARCH&nbsp;&nbsp;TELLS&nbsp;&nbsp;US…
-              %p{:style => 'margin-bottom: 0px; line-height: 18px;'}
-                %span{:class => 'bold'} Consumer attitudes toward restroom advertising were found to be very positive with as much as
-                %span{:class => 'highlight'} 98%
-                %span{:class => 'bold'} of those surveyed indicating a favorable reaction
-              %p{:style => 'font-size: 14px; font-style: italic;'} Arizona State University Study
-              %p{:style => 'margin-bottom: 0px; line-height: 18px;'}
-                %span{:class => 'bold'} Retention of impressions generated by restroom advertising was found to be on average,
-                %span{:class => 'highlight'} 40%
-                %span{:class => 'bold'} stronger than impressions by other media.
-              %p{:style => 'font-size: 14px; font-style: italic;'} Rice University Study
-              %p{:style => 'margin-bottom: 0px; line-height: 18px;'}
-                %span{:class => 'bold'} 
-                  When restroom advertising viewers are shopping for a product or service, retention of that
-                  particular product or service advertised raises to an
-                %span{:class => 'highlight'} 85%
-                %span{:class => 'bold'} rate.
-              %p{:style => 'font-size: 14px; font-style: italic;'} Market Intelligence Media Research
-            %div{:class => 'door right'}
-          %div{:id => 'indoor_why_it_works', :class => 'segment'}
-            .slider
-              .slider_container
-                .slide
-                  .image
-                    %img{:src => '/images/placeholder.png', :'data-original' => '/images/why_it_works/why_it_works_1.png', :width => '490', :height => '276', :alt => 'job', :class => 'lazy'}
-                    %noscript
-                      %img{:src => '/images/why_it_works/why_it_works_1.png', :width => '490', :height => '276', :alt => 'job'}
-                .slide
-                  .image
-                    %img{:src => '/images/placeholder.png', :'data-original' => '/images/why_it_works/why_it_works_2.png', :width => '490', :height => '276', :alt => 'job', :class => 'lazy'}
-                    %noscript
-                      %img{:src => '/images/why_it_works/why_it_works_2.png', :width => '490', :height => '276', :alt => 'job'}
-                .slide
-                  .image
-                    %img{:src => '/images/placeholder.png', :'data-original' => '/images/why_it_works/why_it_works_3.png', :width => '490', :height => '276', :alt => 'job', :class => 'lazy'}
-                    %noscript
-                      %img{:src => '/images/why_it_works/why_it_works_3.png', :width => '490', :height => '276', :alt => 'job'}
-                .slide
-                  .image
-                    %img{:src => '/images/placeholder.png', :'data-original' => '/images/why_it_works/why_it_works_4.png', :width => '490', :height => '276', :alt => 'job', :class => 'lazy'}
-                    %noscript
-                      %img{:src => '/images/why_it_works/why_it_works_4.png', :width => '490', :height => '276', :alt => 'job'}
-                .slide
-                  .image
-                    %img{:src => '/images/placeholder.png', :'data-original' => '/images/why_it_works/why_it_works_5.png', :width => '490', :height => '276', :alt => 'job', :class => 'lazy'}
-                    %noscript
-                      %img{:src => '/images/why_it_works/why_it_works_5.png', :width => '490', :height => '276', :alt => 'job'}
-                .slide
-                  .image
-                    %img{:src => '/images/placeholder.png', :'data-original' => '/images/why_it_works/why_it_works_6.png', :width => '490', :height => '276', :alt => 'job', :class => 'lazy'}
-                    %noscript
-                      %img{:src => '/images/why_it_works/why_it_works_6.png', :width => '490', :height => '276', :alt => 'job'}
-            %a{:class => 'slider_control previous', :href => '#previous', :title => 'Previous'} Previous
-            %a{:class => 'slider_control next', :href => '#next', :title => 'Next'} Next
-          %div{:id => 'indoor_locations', :class => 'segment'}
-            %div{:class => 'left', :style => 'width: 50%; max-width: 50%;'}
-              %h2 Omaha
-              %ul
-                %li Cunningham’s (2101 N. 120th St.)
-                %li On the Rocks (16919 Audrey Street)
-                %li Varsity (9735 Q St.)
-                %li Varsity (14529 F St.)
-                %li Moylan Iceplex (12550 W. Maple Rd.)
-                %li Aspen Athletics (17725 Welch Plaza)
-                %li Bene Pizza (12301 W. Maple Rd.)
-            %div{:class => 'right', :style => 'width: 50%; max-width: 50%;'}
-              %h2 Lincoln
-              %ul
-                %li 12th St. Pub (1200 O St.)
-                %li Bison Witches (1320 P St.)
-                %li Anytime Fitness (27th and Superior)
+        %div{:id => 'indoor_indoor', :class => 'segment'}
+          %div{:class => 'left'}
+            %h2 INDEPENDENT&nbsp;&nbsp;RESEARCH&nbsp;&nbsp;TELLS&nbsp;&nbsp;US…
+            %p{:style => 'margin-bottom: 0px; line-height: 18px;'}
+              %span{:class => 'bold'} Consumer attitudes toward restroom advertising were found to be very positive with as much as
+              %span{:class => 'highlight'} 98%
+              %span{:class => 'bold'} of those surveyed indicating a favorable reaction
+            %p{:style => 'font-size: 14px; font-style: italic;'} Arizona State University Study
+            %p{:style => 'margin-bottom: 0px; line-height: 18px;'}
+              %span{:class => 'bold'} Retention of impressions generated by restroom advertising was found to be on average,
+              %span{:class => 'highlight'} 40%
+              %span{:class => 'bold'} stronger than impressions by other media.
+            %p{:style => 'font-size: 14px; font-style: italic;'} Rice University Study
+            %p{:style => 'margin-bottom: 0px; line-height: 18px;'}
+              %span{:class => 'bold'} 
+                When restroom advertising viewers are shopping for a product or service, retention of that
+                particular product or service advertised raises to an
+              %span{:class => 'highlight'} 85%
+              %span{:class => 'bold'} rate.
+            %p{:style => 'font-size: 14px; font-style: italic;'} Market Intelligence Media Research
+          %div{:class => 'door right'}
+        %div{:id => 'indoor_why_it_works', :class => 'segment'}
+          .slider
+            .slider_container
+              .slide
+                .image
+                  %img{:src => '/images/placeholder.png', :'data-original' => '/images/why_it_works/why_it_works_1.png', :width => '490', :height => '276', :alt => 'job', :class => 'lazy'}
+              .slide
+                .image
+                  %img{:src => '/images/placeholder.png', :'data-original' => '/images/why_it_works/why_it_works_2.png', :width => '490', :height => '276', :alt => 'job', :class => 'lazy'}
+              .slide
+                .image
+                  %img{:src => '/images/placeholder.png', :'data-original' => '/images/why_it_works/why_it_works_3.png', :width => '490', :height => '276', :alt => 'job', :class => 'lazy'}
+              .slide
+                .image
+                  %img{:src => '/images/placeholder.png', :'data-original' => '/images/why_it_works/why_it_works_4.png', :width => '490', :height => '276', :alt => 'job', :class => 'lazy'}
+              .slide
+                .image
+                  %img{:src => '/images/placeholder.png', :'data-original' => '/images/why_it_works/why_it_works_5.png', :width => '490', :height => '276', :alt => 'job', :class => 'lazy'}
+              .slide
+                .image
+                  %img{:src => '/images/placeholder.png', :'data-original' => '/images/why_it_works/why_it_works_6.png', :width => '490', :height => '276', :alt => 'job', :class => 'lazy'}
+          %a{:class => 'slider_control previous', :href => '#previous', :title => 'Previous'} Previous
+          %a{:class => 'slider_control next', :href => '#next', :title => 'Next'} Next
+        %div{:id => 'indoor_locations', :class => 'segment'}
+          %div{:class => 'left', :style => 'width: 50%; max-width: 50%;'}
+            %h2 Omaha
+            %ul
+              %li Cunningham’s (2101 N. 120th St.)
+              %li On the Rocks (16919 Audrey Street)
+              %li Varsity (9735 Q St.)
+              %li Varsity (14529 F St.)
+              %li Moylan Iceplex (12550 W. Maple Rd.)
+              %li Aspen Athletics (17725 Welch Plaza)
+              %li Bene Pizza (12301 W. Maple Rd.)
+          %div{:class => 'right', :style => 'width: 50%; max-width: 50%;'}
+            %h2 Lincoln
+            %ul
+              %li 12th St. Pub (1200 O St.)
+              %li Bison Witches (1320 P St.)
+              %li Anytime Fitness (27th and Superior)
     %section{:id => 'the_contacts'}
       .container
-        .inner_header
+        %div{:class => 'header'}
           %h1 THE&nbsp;&nbsp;CONTACTS
           %nav
-        .inner_body
-          .segment
-            .left
-              %h2 HIRE&nbsp;&nbsp;THE&nbsp;&nbsp;FINCH
-              %address
-                %span{:class => 'bold'} Urban Finch
-                %br
-                2128 N 121st St
-                %br
-                Omaha NE, 68164
+        %div{:class => 'segment'}
+          .left
+            %h2 HIRE&nbsp;&nbsp;THE&nbsp;&nbsp;FINCH
+            %address
+              %span{:class => 'bold'} Urban Finch
+              %br
+              2128 N 121st St
+              %br
+              Omaha NE, 68164
+            %p
+              %a{:href => 'tel:1-402-910-0680', :title => 'Call us!'} 402.910.0680
+              %br
+              %a{:href => 'tel:1-402-917-7059', :title => 'Call us!'} 402.917.7059
+            %p
+              %a{:href => 'mailto:thefinch@urbanfinch.com', :title => 'Send us mail!'} thefinch@urbanfinch.com
+            %h2{:class => 'check_us_out'} CHECK&nbsp;&nbsp;US&nbsp;&nbsp;OUT&nbsp;&nbsp;ON…
+            %nav
+              %a{:id => 'facebook', :href => 'http://www.facebook.com/pages/URBAN-FINCH/398228805036', :title => 'Facebook'} Facebook
+              %a{:id => 'twitter', :href => 'https://twitter.com/#!/urbanfinch', :title => 'Twitter'} Twitter
+              %a{:id => 'linkedin', :href => '#linkedin', :title => 'LinkedIn'} LinkedIn
+          .right
+            %h2 GET&nbsp;&nbsp;IN&nbsp;&nbsp;TOUCH&nbsp;&nbsp;WITH&nbsp;&nbsp;THE&nbsp;&nbsp;FINCH
+            %form{:id => 'contact', :action => '/contact', :method => 'POST'}
               %p
-                %a{:href => 'tel:1-402-910-0680', :title => 'Call us!'} 402.910.0680
-                %br
-                %a{:href => 'tel:1-402-917-7059', :title => 'Call us!'} 402.917.7059
+                %input{:id => 'name', :name => 'name', :type => 'text', :placeholder => 'Name'}
               %p
-                %a{:href => 'mailto:thefinch@urbanfinch.com', :title => 'Send us mail!'} thefinch@urbanfinch.com
-              %h2{:class => 'check_us_out'} CHECK&nbsp;&nbsp;US&nbsp;&nbsp;OUT&nbsp;&nbsp;ON…
-              %nav
-                %a{:id => 'facebook', :href => 'http://www.facebook.com/pages/URBAN-FINCH/398228805036', :title => 'Facebook'} Facebook
-                %a{:id => 'twitter', :href => 'https://twitter.com/#!/urbanfinch', :title => 'Twitter'} Twitter
-                %a{:id => 'linkedin', :href => '#linkedin', :title => 'LinkedIn'} LinkedIn
-            .right
-              %h2 GET&nbsp;&nbsp;IN&nbsp;&nbsp;TOUCH&nbsp;&nbsp;WITH&nbsp;&nbsp;THE&nbsp;&nbsp;FINCH
-              %form{:id => 'contact', :action => '/contact', :method => 'POST'}
-                %p
-                  %input{:id => 'name', :name => 'name', :type => 'text', :placeholder => 'Name'}
-                %p
-                  %input{:id => 'email', :name => 'email', :type => 'email', :placeholder => 'E-Mail'}
-                %p
-                  %textarea{:id => 'message', :cols => 1, :rows => 1, :name => 'message', :placeholder => 'Message…'}
-                %p{:class => 'message'}
-                %p{:class => 'loading'}
-                %p
-                  %input{:id => 'send', :name => 'send', :value => 'SEND', :type => 'submit'}
-    %footer
-      %div{:id => 'skyline'}
+                %input{:id => 'email', :name => 'email', :type => 'email', :placeholder => 'E-Mail'}
+              %p
+                %textarea{:id => 'message', :cols => 1, :rows => 1, :name => 'message', :placeholder => 'Message…'}
+              %p{:class => 'message'}
+              %p{:class => 'loading'}
+              %p
+                %input{:id => 'send', :name => 'send', :value => 'SEND', :type => 'submit'}

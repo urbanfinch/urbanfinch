@@ -4,14 +4,13 @@ var urbanfinch = {
   current_section: null,
   
   run: function() {
-    
     if($.cookie("css")) {
       urbanfinch.setTheme($.cookie("css"));
     } else {
       urbanfinch.setTheme('/stylesheets/hybrid.css');
     }
     
-    /* Initialize scripting CSS stylesheet */
+    /* Initialize CSS fixes */
     urbanfinch.initCSS();
     
     /* Initialize navs */
@@ -26,22 +25,16 @@ var urbanfinch = {
     /* Initialize contact form */
     urbanfinch.initContactForm();
     
-    /* Animate the logo and initialize the scripting layout */
-    $('div#animation img').attr('src', '/images/' + urbanfinch.current_theme + '/logo.png');
-    $('div#animation img').load(function() {
-      urbanfinch.animateLogo(function() {
-        urbanfinch.initLayout();
-      });
-    });
+    urbanfinch.handleMainNav('the_finch');
   },
   
   initCSS: function() {
-    $('html').hide();
-    $('body').hide();
-    $('head').append('<link id="script" rel="stylesheet" href="/stylesheets/script.css" title="URBAN FINCH" type="text/css" />');
-    $('body').addClass('no_background');
-    $('body').show();
-    $('html').show();
+    if(!Modernizr.backgroundsize) {
+        $('html').css('background', 'none');
+    }
+    
+    $('div.segment').css('margin-top', '0px');
+    $('body').css('height', $(document).height());
   },
   
   initMainNav: function() {
@@ -112,28 +105,13 @@ var urbanfinch = {
   
   initSegments: function() {
     $('section').each(function() {
-      $('div.inner_body > div.segment', this).hide();
-      $('div.inner_body > div.segment', this).first().show();
+      $('div.container > div.segment', this).hide();
+      $('div.container > div.segment', this).first().show();
     });
   },
   
   initSections: function() {
     $('section').hide();
-  },
-  
-  initLayout: function() {
-    $('nav#main').show();
-    $('nav#themes').show();
-    $('div#logo').show();
-    $('div#skyline').show();
-    $('body').removeClass('no_background');
-    
-    if(!Modernizr.backgroundsize) {
-        $('html').css('background', 'none');
-    }
-    
-    urbanfinch.animateSectionOpen($('section#the_finch'));
-    urbanfinch.current_section = 'the_finch';
   },
   
   initImages: function(segment) {
@@ -199,34 +177,10 @@ var urbanfinch = {
   },
   
   handleSegmentNav: function(segment) {
-    $('div#' + segment).parent('div.inner_body').find('div.segment').hide();
+    $('div#' + segment).parent('div.container').find('div.segment').hide();
     $('div#' + segment).show();
     $('div#' + segment + ' div.slider').slider();
     urbanfinch.initImages($('div#' + segment));
-  },
-  
-  animateLogo: function(callback) {
-    $('div#animation').show();
-    $('div#logo').show();
-    var left = $('div#logo').position().left;
-    var top = $('div#logo').position().top;
-    $('div#logo').hide();
-    
-    var logoTimeout = window.setTimeout(function() {
-      $('div#animation').css('margin-top', '0px');
-      $('div#animation').css('margin-left', '0px');
-      $('div#animation').css('left', $('div#animation').offset().left - $('div#animation').width() / 2);
-      $('div#animation').css('top', $('div#animation').offset().top - $('div#animation').height() / 2);
-      $('div#animation').animate({
-        top: top,
-        left: left,
-        width: '250px',
-        height: '157px'
-      }, 1000, function() {
-        $('div#animation').hide();
-        callback();
-      });
-    }, 2000);
   },
   
   setTheme: function(theme) {
@@ -240,12 +194,12 @@ var urbanfinch = {
   },
   
   animateSectionOpen: function(section, callback) {
-    $(section).css('bottom', '-400px');
+    $(section).css('top', window.innerHeight);
     $(section).css('display', 'block');
 
     $(section).animate({
-      bottom: '0px'
-    }, 500);
+      top: '0px'
+    }, 750);
     
     if (callback) {
       callback();
@@ -254,9 +208,9 @@ var urbanfinch = {
   
   animateSectionClose: function(section, callback) {
     $(section).animate({
-      bottom: '-400px'
-    }, 500, function() {
-      $(section).css('bottom', '0px');
+      top: window.innerHeight
+    }, 750, function() {
+      $(section).css('top', '0px');
       $(section).css('display', 'none');
       
       if (callback) {

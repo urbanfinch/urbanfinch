@@ -1,14 +1,14 @@
 @import "compass"
 @import "compass/reset"
 
-@include font-face("Bebas", font-files("/fonts/bebas.woff", woff, "bebas.otf", opentype), "bebas.eot")
+@include font-face("Bebas", font-files("/fonts/bebas.woff", woff, "/fonts/bebas.otf", opentype), "/fonts/bebas.eot")
 
 /* Colors */
 $black: #2F2F2F
 $orange: #F89200
 $blue: #637C86
 $white: #FFFFFF
-  
+
 /* Tags */
 html
   font-family: Arial, sans-serif
@@ -19,429 +19,396 @@ html
   a
     outline: none
   
-header
-  height: 110px
-  margin-bottom: 40px
-  width: 100%
-  min-width: 1040px
-  padding: 40px 0px
+body
+  padding-bottom: 20px
   
-  div.container
-    nav#themes
-      display: none
-      position: absolute
-      width: 72px
-      height: 16px
-      top: 190px
-      padding: 4px
-      margin-left: 80px
+header
+  position: relative
+  height: 180px
+  padding: 40px
             
-      a
-        display: block
-        float: left
-        width: 16px
-        height: 16px
-        margin: 0px 4px
-        text-indent: -9999px
+  nav#main
+    position: absolute
+    width: 170px
+    height: 150px
+    top: 40px
+    left: 40px
+    background-repeat: no-repeat
 
-      a#blue
-        background-image: url('/images/blue.png')
-      
-      a#orange
-        background-image: url('/images/orange.png')
-      
-      a#hybrid
-        background-image: url('/images/hybrid.png')
-              
-    nav#main
-      position: absolute
+    a
+      display: block
       width: 170px
-      height: 150px
-      margin-left: 40px
-      background-repeat: no-repeat
-
-      a
-        display: block
-        width: 170px
-        height: 30px
-        text-indent: -9999px
-        
-        span
-          position: absolute
-          display: none
-          width: 24px
-          height: 24px
-          
-        span.the_finch
-          top: -19px
-          left: -6px
-          
-        span.the_services
-          top: 9px
-          left: 149px
-          
-        span.the_work
-          top: 35px
-          left: 2px
-          
-        span.the_indoor
-          top: 60px
-          left: 147px
-          
-        span.the_contacts
-          top: 93px
-          left: -5px
-          
-      a:hover,
-      a:active,
-      a.active
-        span
-          display: block
+      height: 30px
+      text-indent: -9999px
       
-    div#logo
-      float: right
+      span
+        position: absolute
+        display: none
+        width: 24px
+        height: 24px
+        
+      span.the_finch
+        top: -19px
+        left: -6px
+        
+      span.the_services
+        top: 9px
+        left: 149px
+        
+      span.the_work
+        top: 35px
+        left: 2px
+        
+      span.the_indoor
+        top: 60px
+        left: 147px
+        
+      span.the_contacts
+        top: 93px
+        left: -5px
+        
+    a:hover,
+    a:active,
+    a.active
+      span
+        display: block
+  
+  nav#themes
+    position: absolute
+    width: 72px
+    height: 16px
+    top: 190px
+    padding: 4px
+    margin-left: 40px
+
+    a
+      display: block
+      float: left
+      width: 16px
+      height: 16px
+      margin: 0px 4px
+      text-indent: -9999px
+
+    a#blue
+      background-image: url('/images/blue.png')
+
+    a#orange
+      background-image: url('/images/orange.png')
+
+    a#hybrid
+      background-image: url('/images/hybrid.png')
+            
+  div#logo
+    position: absolute
+    width: 250px
+    height: 157px
+    top: 40px
+    right: 40px
+    
+    a
+      display: block
+      cursor: pointer
       width: 250px
       height: 157px
-      margin-right: 40px
-      
-      a
-        display: block
-        cursor: pointer
-        width: 250px
-        height: 157px
-        
-    div#animation
-      position: absolute
-      display: none
-      width: 500px
-      height: 315px
-      left: 50%
-      top: 50%
-      margin-left: -250px
-      margin-top: -158px
-
-      img
-        width: 100%
-        height: 100%
-        opacity: 0.8
     
 section
-  width: 100%
-  min-width: 1040px
-  margin-bottom: 20px
+  position: relative
+  padding: 0px 40px 20px
   color: $white
   
   div.container
-    margin: 0px 40px
     padding: 20px
     
-    div.inner_header
+    div.header
       height: 24px
       margin-bottom: 20px
-      
+    
       h1
         float: left
-        font-family: Bebas, Impact, sans-serif
+        font-family: "Bebas", Impact, sans-serif
         font-size: 24px
-    
+  
       nav
         float: right
         height: 24px
-      
+    
         a
           display: block
           float: left
           height: 24px
           line-height: 24px
           margin-left: 10px
-          font-family: Bebas, Impact, sans-serif
+          font-family: "Bebas", Impact, sans-serif
           font-size: 14px
           text-decoration: none
           text-align: center
-          
+        
         a.small
           width: 90px
-          
+        
         a.large
           width: 110px
-          
-    div.inner_body
-      min-height: 274px
+    
+    div.segment
+      height: 274px
       padding: 10px
+      margin-top: 10px
+    
+      div.left
+        float: left
+        height: 274px
+        max-width: 675px
+
+      div.right
+        float: right
+        width: 274px
+        height: 274px
+
+      h2
+        font-family: "Bebas", Impact, sans-serif
+        font-size: 32px
+        margin-bottom: 16px
+
+      p
+        span.highlight
+          font-family: "Bebas", Impact, sans-serif
+
+        span.bold
+          font-weight: bold
+        
+      ul
+        li
+          list-style-type: disc
+          list-style-position: inside
+          line-height: 18px
       
-      div.segment
-        margin-bottom: 10px
-        
-        div.left
-          float: left
-          height: 274px
-          max-width: 675px
+      a.slider_control
+        position: relative
+        display: block
+        width: 74px
+        height: 74px
+        text-indent: -9999px
+        margin-top: -173px
 
-        div.right
-          float: right
-          width: 274px
-          height: 274px
+      a.previous
+        float: left
+        margin-left: -36px
 
-        h2
-          font-family: Bebas, Impact, sans-serif
-          font-size: 32px
-          margin-bottom: 16px
-
-        p
-          span.highlight
-            font-family: Bebas, Impact, sans-serif
-
-          span.bold
-            font-weight: bold
+      a.next
+        float: right
+        margin-right: -36px
             
-        ul
-          li
-            list-style-type: disc
-            list-style-position: inside
-            line-height: 18px
-        
-        div.slider
-          position: relative
-          width: 100%
+      div.slider
+        position: relative
+        width: 100%
+        height: 274px
+        overflow: hidden
+      
+        div.slider_container
           height: 274px
-          overflow: hidden
-          
-          div.slider_container
-            height: 274px
-            position: absolute
-            
-            div.slide
-              float: left
+          position: absolute
+        
+          div.slide
+            float: left
+            width: 490px
+            height: 276px
+            margin-right: 10px
+        
+            div.image
+              position: absolute
               width: 490px
               height: 276px
-              margin-right: 10px
+          
+              img
+                display: block
+                width: inherit
+                height: inherit
             
-              div.image
-                position: absolute
-                width: 490px
-                height: 276px
+            div.tag
+              position: absolute
+              height: 52px
+              width: 490px
+              margin-top: 204px
+          
+              p
+                float: right
+                height: 44px
+                padding: 8px
+                font-size: 14px
+                margin-bottom: 8px
+                line-height: 18px
+                text-align: right
               
-                img
+                span.bold
+                  font-weight: bold
+          
+                a
                   display: block
-                  width: inherit
-                  height: inherit
-                
-              div.tag
-                position: absolute
-                height: 52px
-                width: 490px
-                margin-top: 204px
-              
-                p
-                  float: right
-                  height: 44px
-                  padding: 8px
-                  font-size: 14px
-                  margin-bottom: 8px
-                  line-height: 18px
-                  text-align: right
-                  
-                  span.bold
-                    font-weight: bold
-              
-                  a
-                    display: block
-          
-        a.slider_control
-          position: relative
-          display: block
-          width: 74px
-          height: 74px
-          text-indent: -9999px
-          margin-top: -173px
-          
-        a.previous
-          float: left
-          margin-left: -36px
-          
-        a.next
-          float: right
-          margin-right: -36px
-            
-      div.segment:last-child
-        margin-bottom: 0px
         
-      p
-        font-size: 16px
-        margin-bottom: 16px
-        line-height: 22px
+    div.segment:first-child
+      margin-top: 0px
+    
+    p
+      font-size: 16px
+      margin-bottom: 16px
+      line-height: 22px
       
 section#the_finch
   div.container
-    div.inner_body
-      div#the_clients
-        div.row
-          width: 930px
+    div#the_clients
+      div.row
+        width: 930px
+        height: 82px
+        margin: 0px auto
+        margin-top: 14px
+        
+        a
+          float: left
+          display: block
+          width: 290px
           height: 82px
-          margin: 0px auto
+          padding: 0px 10px
           
-          a
-            float: left
-            display: block
-            width: 290px
-            height: 82px
-            padding: 0px 10px
-            
-            img
-              max-width: 290px
-              max-height: 82px
-            
-        div.row:first-child
-          margin-bottom: 14px
+          img
+            max-width: 290px
+            max-height: 82px
           
-        div.row:last-child
-          margin-top: 14px
+      div.row:first-child
+        margin-top: 0px
+        
+    div#the_people
+      div.slider_container
+        div.slide
+          width: 900px
           
-      div#the_people
-        div.slider_container
-          div.slide
-            width: 900px
-            
-            div.bio
-              position: relative
-              width: 390px
-              left: 490px
-              height: 256px
-              padding: 10px
-              background-color: $black
-            
-              h3
-                font-family: Bebas, Impact, sans-serif
-                font-size: 18px
-                margin-bottom: 10px
+          div.bio
+            position: relative
+            width: 390px
+            left: 490px
+            height: 256px
+            padding: 10px
+            background-color: $black
+          
+            h3
+              font-family: "Bebas", Impact, sans-serif
+              font-size: 18px
+              margin-bottom: 10px
 
 section#the_services
   div.container
-    div.inner_body
-      div.segment
-        div.top,
-        div.center,
-        div.bottom
-          width: 100%
-          height: 91px
-          
-          div.left,
-          div.middle,
-          div.right
-            float: left
-            width: 28%
-            height: 91px
-            
-          div.middle
-            margin: 0px 8%
-          
-        div
-          h2
-            font-size: 18px
-            margin-bottom: 10px
-            width: 180px
-            height: 24px
-            line-height: 24px
-            padding-left: 6px
+    div.top,
+    div.center,
+    div.bottom
+      height: 91px
+      
+      div.left,
+      div.middle,
+      div.right
+        float: left
+        width: 28%
+        max-width: 28%
+        height: 91px
+        
+      div.middle
+        margin: 0px 8%
+      
+      div
+        h2
+          font-family: "Bebas", Impact, sans-serif
+          font-size: 18px
+          margin-bottom: 10px
+          width: 180px
+          height: 24px
+          line-height: 24px
+          padding-left: 6px
 
-          p
-            font-size: 14px
-            line-height: 16px
+        p
+          font-size: 14px
+          line-height: 16px
                           
 section#the_contacts
   div.container
-    div.inner_body
+    h2
+      font-family: "Bebas", Impact, sans-serif
+      font-size: 20px
+      margin-bottom: 10px
       
-      h2
-        font-family: Bebas, Impact, sans-serif
-        font-size: 20px
+    div.left
+      h2.check_us_out
+        margin-top: 14px
+          
+      p
         margin-bottom: 10px
         
-      div.left
-        h2.check_us_out
-          margin-top: 14px
-            
+        a
+          font-weight: bold
+          
+      address
+        font-size: 16px
+        margin-bottom: 10px
+        line-height: 22px
+        
+        span.bold
+          font-weight: bold
+      
+      nav
+        height: 48px
+        
+        a
+          display: block
+          float: left
+          width: 48px
+          height: 48px
+          margin-right: 10px
+          text-indent: -9999px
+        
+    div.right
+      width: 600px
+      
+      form
         p
           margin-bottom: 10px
           
-          a
-            font-weight: bold
-            
-        address
+        input,
+        textarea
+          border: none
+          height: 26px
+          width: 590px
+          padding: 5px
           font-size: 16px
-          margin-bottom: 10px
-          line-height: 22px
           
-          span.bold
-            font-weight: bold
+        textarea
+          height: 102px
+          resize: none
         
-        nav
-          height: 48px
+        input[type=submit]
+          float: right
+          border: none
+          width: 90px
+          height: 24px
+          padding: 0px
+          font-family: "Bebas", Impact, sans-serif
+          font-size: 14px
+          background-color: transparent
+          cursor: pointer
           
-          a
-            display: block
-            float: left
-            width: 48px
-            height: 48px
-            margin-right: 10px
-            text-indent: -9999px
+        input.error,
+        textarea.error
+          background-color: $black
+          color: $white
           
-      div.right
-        width: 600px
+        p.message
+          display: none
+          float: left
+          width: 500px
+          height: 24px
+          line-height: 24px
+          font-weight: bold
         
-        form
-          p
-            margin-bottom: 10px
-            
-          input,
-          textarea
-            border: none
-            height: 26px
-            width: 590px
-            padding: 5px
-            font-size: 16px
-            
-          textarea
-            height: 102px
-            resize: none
-          
-          input[type=submit]
-            float: right
-            border: none
-            width: 90px
-            height: 24px
-            padding: 0px
-            font-family: Bebas, Impact, sans-serif
-            font-size: 14px
-            background-color: transparent
-            cursor: pointer
-            
-          input.error,
-          textarea.error
-            background-color: $black
-            color: $white
-            
-          p.message
-            display: none
-            float: left
-            width: 500px
-            height: 24px
-            line-height: 24px
-            font-weight: bold
-          
-          p.loading
-            display: none
-            float: left
-            width: 500px
-            height: 24px
-            background-repeat: no-repeat
-            background-position: center
-
-footer
-  min-width: 1040px
-  
-  div#skyline
-    width: 100%
-    height: 300px
-    background-position: 300px 0px
-    background-repeat: repeat-x
+        p.loading
+          display: none
+          float: left
+          width: 500px
+          height: 24px
+          background-repeat: no-repeat
+          background-position: center
