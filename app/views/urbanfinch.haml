@@ -161,8 +161,28 @@
         %div{:class => 'header'}
           %h1 THE&nbsp;&nbsp;WORK
           %nav{:class => 'segment'}
+            %a{:class => 'feature large', :href => '#work_feature', :title => 'Feature'} FEATURE
             - @works.each do |work|
               %a{:class => "work_#{work.name.downcase.gsub(/\s/, '_')} large", :href => "#work_#{work.name.downcase.gsub(/\s/, '_')}", :title => "#{work.name.upcase}"}= work.name.upcase
+        %div{:id => "work_feature", :class => 'segment'}
+          %div{:class => 'left'}
+            %h2 FEATURE
+            %p
+              In the summer of 2012, the Nebraska Office of Highway Safety was looking for new ways to promote the "You Drink and Drive. You Lose"
+              message and ultimately lower alcohol related crashes and deaths in Nebraska.
+            %p
+              They came to Urban Finch for some big ideas. We thought rather than focusing major promotional efforts on specific drinking holidays such as New Years and St. Pat's day, 
+              that only take up one day, we would focus on Nebraska events where drinking is pervasive and lasts for weeks at a time. With its large concentrated crowds, 
+              the College World Series was an easy pick for the first event. 
+            %p 
+              Urban Finch supplied the most popular venues around Ameritrade Stadium with over 10,000 "Get Home Safe" custom designed cups, 
+              and for two straight weeks, patron's drinks were served in the cups. These cups not only hit the target demo, but hit the target demo AT the target time. 
+              The cups were getting love on Facebook and Twitter within a day and the patrons we spoke with said they loved the idea and respected the NOHS for making an effort during such a big event. 
+          %div{:class => 'right'}
+            %object{:height => "240", :width => "427", :style => 'float: right;'}
+              %param{:name => "allowfullscreen", :value => "true"}
+              %param{:name => "movie", :value => "http://www.facebook.com/v/10151935481245037"}
+              %embed{:allowfullscreen => "1", :height => "240", :src => "http://www.facebook.com/v/10151935481245037", :type => "application/x-shockwave-flash", :width => "427"}
         - @works.each do |work|
           %div{:id => "work_#{work.name.downcase.gsub(/\s/, '_')}", :class => 'segment'}
             .slider
@@ -184,11 +204,11 @@
           %h1 THE&nbsp;&nbsp;INDOOR
           %nav{:class => 'segment'}
             %a{:class => 'indoor_indoor large', :href => '#indoor_indoor', :title => 'Indoor'} INDOOR
-            
             %a{:class => 'indoor_why_it_works large', :href => '#indoor_why_it_works', :title => 'Why It Works'} WHY&nbsp;&nbsp;IT&nbsp;&nbsp;WORKS
             %a{:class => 'indoor_locations large', :href => '#indoor_locations', :title => 'Locations'} LOCATIONS
         %div{:id => 'indoor_indoor', :class => 'segment'}
           %div{:class => 'left'}
+            %h2 HITTING&nbsp;&nbsp;YOUR&nbsp;&nbsp;TARGET
             %p{:style => 'line-height: 18px;'}
               Urban Finch advertises in public restrooms of bars, health clubs, restaurants and other high traffic venues in order to 
               target specific demographics in a relaxed and clutter-free environment. 
