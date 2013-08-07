@@ -179,10 +179,11 @@
               and for two straight weeks, patron's drinks were served in the cups. These cups not only hit the target demo, but hit the target demo AT the target time. 
               The cups were getting love on Facebook and Twitter within a day and the patrons we spoke with said they loved the idea and respected the NOHS for making an effort during such a big event. 
           %div{:class => 'right'}
-            %object{:height => "240", :width => "427", :style => 'float: right;'}
-              %param{:name => "allowfullscreen", :value => "true"}
-              %param{:name => "movie", :value => "http://www.facebook.com/v/10151935481245037"}
-              %embed{:allowfullscreen => "1", :height => "240", :src => "http://www.facebook.com/v/10151935481245037", :type => "application/x-shockwave-flash", :width => "427"}
+            %iframe{:allowFullScreen => "", :frameborder => "0", :height => "240", :mozallowfullscreen => "", :src => "http://player.vimeo.com/video/71902703?title=0&amp;byline=0&amp;portrait=0&amp;color=63786", :webkitAllowFullScreen => "", :width => "427"}
+            / %object{:height => "240", :width => "427", :style => 'float: right;'}
+            /   %param{:name => "allowfullscreen", :value => "true"}
+            /   %param{:name => "movie", :value => "http://www.facebook.com/v/10151935481245037"}
+            /   %embed{:allowfullscreen => "1", :height => "240", :src => "http://www.facebook.com/v/10151935481245037", :type => "application/x-shockwave-flash", :width => "427"}
         - @works.each do |work|
           %div{:id => "work_#{work.name.downcase.gsub(/\s/, '_')}", :class => 'segment'}
             .slider
