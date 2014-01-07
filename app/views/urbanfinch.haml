@@ -75,7 +75,10 @@
           .left
             %h2 OUR&nbsp;&nbsp;FOCUS&nbsp;&nbsp;IS&nbsp;&nbsp;LOCAL.
             %p
-              //%img{:id => 'bbblogo', :src => '/images/bbblogo.png', :height => '100px', :alt => 'BBB Logo'}
+              %a{:id => 'bbblink', :class => 'ruvtbum', :href => "http://www.bbb.org/nebraska/business-reviews/advertising-agencies-and-counselors/urban-finch-in-omaha-ne-300082254#bbbseal", :style => "display: block;position: relative;overflow: hidden; width: 60px; height: 108px; margin: 0px; padding: 0px;", :title => "Urban Finch, LLC, Advertising Agencies  Counselors, Omaha, NE"}
+                %img{:id => 'bbblinkimg', :alt => "Urban Finch, LLC, Advertising Agencies  Counselors, Omaha, NE", :height => "108", :src => "http://seal-nebraska.bbb.org/logo/ruvtbum/urban-finch-300082254.png", :style => "padding: 0px; border: none;", :width => "120"}
+              :javascript
+                var bbbprotocol = ( ("https:" == document.location.protocol) ? "https://" : "http://" ); document.write(unescape("%3Cscript src='" + bbbprotocol + 'seal-nebraska.bbb.org' + unescape('%2Flogo%2Furban-finch-300082254.js') + "' type='text/javascript'%3E%3C/script%3E"));
               I guess you could say we have Nebraska Pride. We want to see our local communities thrive and local businesses succeed. 
               We strive to help the Nebraska business achieve its goals by uncovering insights, developing strategies, 
               and implementing marketing plans that can close the gap between your brand and audience.
