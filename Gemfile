@@ -1,4 +1,4 @@
-source :rubygems
+source 'https://rubygems.org'
 
 # Server requirements (defaults to WEBrick)
 # gem 'thin'
@@ -15,6 +15,7 @@ gem 'haml'
 gem 'mongo_mapper'
 gem 'bson_ext', :require => "mongo"
 gem 'joint'
+gem 'json'
 
 # Test requirements
 
